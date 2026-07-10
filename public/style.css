@@ -217,6 +217,11 @@ button {
   background: var(--surface-muted);
 }
 
+.report-highlight {
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+
 .container {
   width: min(var(--max), calc(100% - 32px));
   margin: 0 auto;
@@ -556,6 +561,39 @@ p {
   max-width: 780px;
   color: var(--muted);
   font-size: 18px;
+}
+
+.submission-subtitle {
+  color: var(--ink) !important;
+  font-weight: 800;
+}
+
+.submission-note {
+  margin-bottom: 24px;
+  padding: 20px 22px;
+  color: #fff;
+  background: var(--accent);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-sm);
+}
+
+.submission-note p {
+  max-width: 980px;
+  font-weight: 750;
+}
+
+.report-section-grid {
+  display: grid;
+  gap: 18px;
+}
+
+.compact-header {
+  margin-top: 34px;
+  margin-bottom: 18px;
+}
+
+.compact-header h3 {
+  font-size: 28px;
 }
 
 .two-column,
@@ -908,6 +946,22 @@ p {
 
 .placeholder-card .btn {
   margin-top: 18px;
+}
+
+.appendix-card {
+  border-style: solid;
+  border-color: var(--line);
+}
+
+.appendix-card .status-label {
+  display: inline-flex;
+  margin-top: 8px;
+  padding: 7px 10px;
+  color: var(--accent-dark);
+  background: var(--accent-soft);
+  border-radius: var(--radius);
+  font-size: 13px;
+  font-weight: 900;
 }
 
 .empty-state {

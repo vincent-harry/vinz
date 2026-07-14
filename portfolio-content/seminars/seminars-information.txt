@@ -1,0 +1,10 @@
+For each seminar or training, provide verified information using this format:
+
+Filename:
+Title:
+Organizer:
+Date:
+Category:
+Short description:
+
+Add another block for each seminar or training.

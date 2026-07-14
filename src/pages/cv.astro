@@ -1,0 +1,106 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import PageHeader from "../components/PageHeader.astro";
+import SkillGroup from "../components/SkillGroup.astro";
+import { profile, experience, education } from "../data/profile";
+import { skillGroups } from "../data/skills";
+import { credentials } from "../data/certificates";
+---
+
+<BaseLayout
+  title="Curriculum Vitae | Vincent Harry H. Trayvilla"
+  description="Web-based curriculum vitae of Vincent Harry H. Trayvilla, including education, experience, projects, certifications, and IT skills."
+  path="/cv/"
+>
+  <PageHeader
+    eyebrow="Curriculum Vitae"
+    title="Professional and academic background"
+    intro="A web-based version of my current CV, with my public location limited to San Pedro City, Laguna."
+  />
+
+  <section class="section section-tight">
+    <div class="container cv-actions">
+      <a class="btn btn-primary" href={profile.cv} target="_blank" rel="noopener noreferrer">View CV PDF</a>
+      <a class="btn btn-secondary" href={profile.cv} download>Download CV</a>
+      <a class="btn btn-text" href={profile.cvFallback} download>Download Editable DOCX</a>
+    </div>
+  </section>
+
+  <article class="section cv-document">
+    <div class="container reading-width">
+      <header class="cv-nameplate">
+        <h2>{profile.name}</h2>
+        <p>{profile.title}</p>
+        <div class="cv-contact-line">
+          <span>{profile.location}</span>
+          <a href={`mailto:${profile.email}`}>{profile.email}</a>
+          <a href={`tel:${profile.phone.replace(/\s/g, "")}`}>{profile.phone}</a>
+        </div>
+      </header>
+
+      <section class="cv-section">
+        <h2>Professional Summary</h2>
+        <p>{profile.summary} I am seeking an entry-level role in IT support, systems development, quality assurance, or web applications.</p>
+      </section>
+
+      <section class="cv-section">
+        <h2>Work Experience</h2>
+        <div class="cv-entry-heading">
+          <div><h3>{experience.organization}</h3><p>{experience.role}</p></div>
+          <p>{experience.period}</p>
+        </div>
+        <p><strong>Assigned Project:</strong> {experience.project}</p>
+        <ul class="plain-list">
+          {experience.highlights.map((highlight) => <li>{highlight}</li>)}
+        </ul>
+      </section>
+
+      <section class="cv-section">
+        <h2>Academic Projects and Research</h2>
+        <div class="cv-entry-heading">
+          <div><h3>PLANTERAID</h3><p>Web-Based Soil Monitoring and Recommendation System | Capstone Project</p></div>
+          <p>2025 - 2026</p>
+        </div>
+        <p>IoT-enabled web system for soil moisture, temperature, and humidity monitoring with recommendations and alert notifications.</p>
+        <div class="cv-entry-heading">
+          <div><h3>E-Commerce Ticketing System</h3><p>Web Developer</p></div>
+          <p>March 2024 - May 2024</p>
+        </div>
+        <p>Movie ticketing system built with ASP.NET and C# using an MS Access database for ticket booking and movie-distributor management.</p>
+      </section>
+
+      <section class="cv-section">
+        <h2>Education</h2>
+        {education.map((entry) => (
+          <div class="education-entry">
+            <div class="cv-entry-heading">
+              <div><h3>{entry.school}</h3><p>{entry.location}</p></div>
+              <p>{entry.period}</p>
+            </div>
+            <p><strong>{entry.program}</strong></p>
+            <p>{entry.details}</p>
+          </div>
+        ))}
+      </section>
+
+      <section class="cv-section">
+        <h2>Certifications</h2>
+        <ul class="two-column-list">
+          {credentials.filter((item) => item.category === "Certificate").map((item) => <li>{item.title} | {item.date}</li>)}
+        </ul>
+      </section>
+
+      <section class="cv-section">
+        <h2>Skills and Expertise</h2>
+        <div class="skills-grid cv-skills">
+          {skillGroups.map((group) => <SkillGroup title={group.title} skills={group.skills} />)}
+        </div>
+      </section>
+
+      <section class="cv-section cv-additional">
+        <div><h2>Languages</h2><p>English | Filipino</p></div>
+        <div><h2>Professional Links</h2><p><a href={profile.linkedin}>LinkedIn</a> | <a href={profile.github}>GitHub</a></p></div>
+      </section>
+    </div>
+  </article>
+</BaseLayout>

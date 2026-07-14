@@ -1,0 +1,45 @@
+---
+import type { AcademicProject } from "../data/projects";
+import ScreenshotGallery from "./ScreenshotGallery.astro";
+
+interface Props {
+  project: AcademicProject;
+  index: number;
+}
+
+const { project, index } = Astro.props;
+---
+
+<article class="project-block" id={`project-${index + 1}`}>
+  <header class="project-header">
+    <div>
+      <p class="project-meta">{project.year} | {project.category}</p>
+      <h2>{project.title}</h2>
+    </div>
+    <span class="project-number" aria-hidden="true">{String(index + 1).padStart(2, "0")}</span>
+  </header>
+
+  <div class="project-copy">
+    <section>
+      <h3>Discussion of the Features</h3>
+      <p>{project.overview}</p>
+      <p>{project.purpose}</p>
+      <ul class="plain-list">
+        {project.features.map((feature) => <li>{feature}</li>)}
+      </ul>
+    </section>
+    <aside class="project-details">
+      <h3>Software Used</h3>
+      <ul class="tag-list compact">
+        {project.software.map((software) => <li>{software}</li>)}
+      </ul>
+      <h3>Learning Outcome</h3>
+      <p>{project.learning}</p>
+    </aside>
+  </div>
+
+  <section class="project-gallery">
+    <h3>Screenshots of the GUI</h3>
+    <ScreenshotGallery images={project.images} label={`${project.title} GUI screenshots`} />
+  </section>
+</article>

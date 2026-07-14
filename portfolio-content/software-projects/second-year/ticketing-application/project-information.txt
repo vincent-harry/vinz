@@ -1,0 +1,11 @@
+Project title: Ticketing Application
+Academic year: Second Year
+Project category: Machine Problem
+Overview:
+Purpose:
+Main features:
+My contribution:
+Technologies used: Xamarin Android
+Learning outcome:
+GitHub URL (optional):
+Live demo URL (optional):

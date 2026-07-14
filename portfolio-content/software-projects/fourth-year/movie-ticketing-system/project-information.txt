@@ -1,0 +1,11 @@
+Project title: Web-Based Movie Ticketing System
+Academic year: Fourth Year
+Project category: Machine Problem
+Overview:
+Purpose:
+Main features:
+My contribution:
+Technologies used:
+Learning outcome:
+GitHub URL (optional):
+Live demo URL (optional):

@@ -1,0 +1,61 @@
+---
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+
+interface Props {
+  title: string;
+  description: string;
+  path?: string;
+}
+
+const {
+  title,
+  description,
+  path = Astro.url.pathname,
+} = Astro.props;
+const canonical = new URL(path, "https://vhhtrayvilla-portfolio.vercel.app/");
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content={description} />
+    <meta name="author" content="Vincent Harry H. Trayvilla" />
+    <meta name="theme-color" content="#123f32" />
+    <link rel="canonical" href={canonical} />
+    <link rel="icon" href="/assets/favicon.ico" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content="https://vhhtrayvilla-portfolio.vercel.app/assets/images/capstone/multi-zone-dashboard.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <title>{title}</title>
+    <link rel="stylesheet" href="/style.css" />
+    <script defer src="/script.js"></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main-content">Skip to main content</a>
+    <Header />
+    <main id="main-content">
+      <slot />
+    </main>
+    <Footer />
+
+    <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="lightbox-title">
+      <div class="lightbox-panel">
+        <div class="lightbox-toolbar">
+          <p id="lightbox-title"></p>
+          <button class="icon-button lightbox-close" type="button" aria-label="Close image viewer">Close</button>
+        </div>
+        <img id="lightbox-image" src="" alt="" />
+        <div class="lightbox-controls">
+          <button class="btn btn-secondary lightbox-prev" type="button">Previous</button>
+          <button class="btn btn-secondary lightbox-next" type="button">Next</button>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

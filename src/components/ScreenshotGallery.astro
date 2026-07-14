@@ -1,0 +1,31 @@
+---
+interface Image {
+  src: string;
+  alt: string;
+  caption: string;
+}
+
+interface Props {
+  images: Image[];
+  label: string;
+}
+
+const { images, label } = Astro.props;
+---
+
+<div class="screenshot-grid" aria-label={label}>
+  {images.map((image, index) => (
+    <figure class="screenshot-card">
+      <button
+        class="gallery-button"
+        type="button"
+        data-lightbox={image.src}
+        data-lightbox-title={image.caption}
+        aria-label={`View ${image.caption} full size`}
+      >
+        <img src={image.src} alt={image.alt} loading={index > 1 ? "lazy" : "eager"} decoding="async" />
+      </button>
+      <figcaption>{image.caption}</figcaption>
+    </figure>
+  ))}
+</div>

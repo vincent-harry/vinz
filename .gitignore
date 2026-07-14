@@ -3,6 +3,7 @@ dist
 .vercel
 .astro/
 .agents/
+.source-work/
 .DS_Store
 Thumbs.db
 desktop.ini

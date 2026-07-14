@@ -1,0 +1,11 @@
+Project title: 4 Pics 1 Word
+Academic year: First Year
+Project category: Machine Problem
+Overview:
+Purpose:
+Main features:
+My contribution:
+Technologies used: Python
+Learning outcome:
+GitHub URL (optional):
+Live demo URL (optional):

@@ -1,0 +1,13 @@
+Project title:
+Academic year: Third Year
+Project category:
+Overview:
+Purpose:
+Main features:
+My contribution:
+Technologies used:
+Learning outcome:
+GitHub URL (optional):
+Live demo URL (optional):
+
+Use this folder only when legitimate Third Year project materials are available. Rename `project-name` to the verified project slug before importing it into the website.

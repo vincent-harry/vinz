@@ -1,0 +1,30 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import PageHeader from "../components/PageHeader.astro";
+import ProjectCard from "../components/ProjectCard.astro";
+import { academicProjects } from "../data/projects";
+---
+
+<BaseLayout
+  title="Software Developed and Machine Problems | Vincent Trayvilla"
+  description="Academic software and machine problems developed by Vincent Harry H. Trayvilla from first year through fourth year, with feature discussions, GUI screenshots, and software used."
+  path="/projects/"
+>
+  <PageHeader
+    eyebrow="Software Developed"
+    title="Academic projects and machine problems"
+    intro="Available project interfaces from my first, second, and fourth years are documented with feature discussions, technology lists, and GUI evidence."
+  />
+
+  <nav class="project-index" aria-label="Project list">
+    <div class="container project-index-links">
+      {academicProjects.map((project, index) => <a href={`#project-${index + 1}`}>{project.year}: {project.title}</a>)}
+    </div>
+  </nav>
+
+  <section class="section project-list-section">
+    <div class="container project-list">
+      {academicProjects.map((project, index) => <ProjectCard project={project} index={index} />)}
+    </div>
+  </section>
+</BaseLayout>

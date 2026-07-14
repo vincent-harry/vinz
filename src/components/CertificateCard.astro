@@ -1,0 +1,29 @@
+---
+import type { Credential } from "../data/certificates";
+
+interface Props {
+  credential: Credential;
+}
+
+const { credential } = Astro.props;
+---
+
+<article class="credential-card">
+  {credential.image && (
+    <button
+      class="credential-image"
+      type="button"
+      data-lightbox={credential.image}
+      data-lightbox-title={credential.title}
+      aria-label={`View ${credential.title} certificate`}
+    >
+      <img src={credential.image} alt={`${credential.title} certificate issued to Vincent Harry H. Trayvilla`} loading="lazy" />
+    </button>
+  )}
+  <div class="credential-content">
+    <p class="credential-type">{credential.category} | {credential.date}</p>
+    <h2>{credential.title}</h2>
+    <p class="credential-issuer">{credential.issuer}</p>
+    <p>{credential.description}</p>
+  </div>
+</article>

@@ -1,0 +1,10 @@
+For each certificate, provide verified information using this format:
+
+Filename:
+Title:
+Issuing organization:
+Date:
+Category:
+Short description:
+
+Add another block for each certificate. Do not include certificates issued to another person.

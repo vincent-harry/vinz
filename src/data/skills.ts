@@ -1,0 +1,46 @@
+export const skillGroups = [
+  {
+    title: "Development and Web",
+    skills: [
+      "Python",
+      "C#",
+      "ASP.NET",
+      "Blazor .NET Core 8.0",
+      "PHP",
+      "CodeIgniter 4",
+      "HTML",
+      "CSS",
+      "Bootstrap",
+      "JavaScript",
+      "jQuery",
+      "Ajax",
+    ],
+  },
+  {
+    title: "Databases and Tools",
+    skills: [
+      "SQL Server",
+      "MySQL",
+      "MS Access",
+      "SQL Server Management Studio",
+      "phpMyAdmin",
+      "XAMPP",
+      "Visual Studio Code",
+      "Git",
+      "GitHub",
+      "Microsoft Office",
+    ],
+  },
+  {
+    title: "IT Support and Networking",
+    skills: [
+      "Windows setup",
+      "Hardware troubleshooting",
+      "Software troubleshooting",
+      "LAN connectivity",
+      "Ethernet cable checking",
+      "IP-address configuration",
+      "Internet-access support",
+    ],
+  },
+];

@@ -1,0 +1,22 @@
+Project title: PLANTERAID: Web-Based Planter Aid Soil Moisture Monitoring and Recommendation System with Alert Notifications Using Microcontroller Devices
+
+Team members:
+- Renz Bryle M. Malabanan
+- Lorenzo T. Okol
+- Vincent H. H. Trayvilla
+- Sam S. L. Zalameda
+
+Adviser: Adomar L. Ilao, DIT
+Beneficiary: Promised Land Farm
+Locale: Tennessee Homes, Barangay San Pablo, City of Sto. Tomas, Batangas
+
+Project overview:
+Problem addressed:
+Project objectives:
+Verified system features:
+Software used:
+Hardware used:
+Development methodology:
+System testing:
+Vincent's verified contributions:
+Project outcome:

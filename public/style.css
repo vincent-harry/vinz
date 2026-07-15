@@ -1399,14 +1399,13 @@ p {
   width: min(1160px, 100%);
   max-height: calc(100vh - 48px);
   display: grid;
-  grid-template-rows: auto minmax(0, 1fr) auto;
+  grid-template-rows: auto minmax(0, 1fr);
   overflow: hidden;
   background: #fff;
   border-radius: var(--radius);
 }
 
-.lightbox-toolbar,
-.lightbox-controls {
+.lightbox-toolbar {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -1440,11 +1439,6 @@ p {
   min-height: 0;
   object-fit: contain;
   background: #eef1f3;
-}
-
-.lightbox-controls {
-  justify-content: center;
-  border-top: 1px solid var(--line);
 }
 
 :focus-visible {

@@ -9,12 +9,9 @@ const lightboxPanel = lightbox?.querySelector(".lightbox-panel");
 const lightboxImage = document.querySelector("#lightbox-image");
 const lightboxTitle = document.querySelector("#lightbox-title");
 const lightboxClose = document.querySelector(".lightbox-close");
-const lightboxPrevious = document.querySelector(".lightbox-prev");
-const lightboxNext = document.querySelector(".lightbox-next");
 const galleryItems = Array.from(document.querySelectorAll("[data-lightbox]"));
 const lightboxOpeners = Array.from(document.querySelectorAll("[data-lightbox-open]"));
 
-let activeGalleryIndex = -1;
 let lastFocusedElement = null;
 
 document.querySelectorAll("[data-current-year]").forEach((element) => {
@@ -158,8 +155,8 @@ window.addEventListener("hashchange", () => {
 function showGalleryItem(index) {
   if (!lightbox || !lightboxImage || !lightboxTitle || galleryItems.length === 0) return;
 
-  activeGalleryIndex = (index + galleryItems.length) % galleryItems.length;
-  const item = galleryItems[activeGalleryIndex];
+  const item = galleryItems[index];
+  if (!item) return;
   const source = item.dataset.lightbox || "";
   const title = item.dataset.lightboxTitle || "Portfolio screenshot";
 
@@ -182,7 +179,6 @@ function closeLightbox() {
   lightbox.classList.remove("is-open");
   lightbox.setAttribute("aria-hidden", "true");
   lightboxImage.removeAttribute("src");
-  activeGalleryIndex = -1;
   if (lastFocusedElement instanceof HTMLElement) lastFocusedElement.focus();
 }
 
@@ -199,12 +195,6 @@ lightboxOpeners.forEach((opener) => {
 });
 
 lightboxClose?.addEventListener("click", closeLightbox);
-lightboxPrevious?.addEventListener("click", () => showGalleryItem(activeGalleryIndex - 1));
-lightboxNext?.addEventListener("click", () => showGalleryItem(activeGalleryIndex + 1));
-
-lightbox?.addEventListener("click", (event) => {
-  if (event.target === lightbox) closeLightbox();
-});
 
 document.addEventListener("keydown", (event) => {
   if (event.key === "Escape" && navLinks?.classList.contains("is-open")) {
@@ -213,19 +203,6 @@ document.addEventListener("keydown", (event) => {
   }
 
   if (!lightbox?.classList.contains("is-open")) return;
-
-  if (event.key === "Escape") {
-    closeLightbox();
-    return;
-  }
-  if (event.key === "ArrowLeft") {
-    showGalleryItem(activeGalleryIndex - 1);
-    return;
-  }
-  if (event.key === "ArrowRight") {
-    showGalleryItem(activeGalleryIndex + 1);
-    return;
-  }
 
   if (event.key === "Tab" && lightboxPanel) {
     const controls = Array.from(

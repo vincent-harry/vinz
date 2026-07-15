@@ -1242,33 +1242,38 @@ p {
   color: #a9d8c9;
 }
 
+.contact-layout {
+  grid-template-columns: minmax(0, 0.75fr) minmax(0, 1.25fr);
+  align-items: start;
+  gap: 64px;
+}
+
 .contact-intro p {
   max-width: 540px;
   color: #cfdae3;
 }
 
-.contact-buttons {
-  margin-top: 24px;
-}
-
 .contact-list {
   display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0 32px;
   margin: 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.16);
   font-style: normal;
 }
 
 .contact-list a,
 .contact-list div {
-  display: flex;
-  align-items: baseline;
-  justify-content: space-between;
-  gap: 24px;
-  padding: 14px 0;
+  min-width: 0;
+  display: block;
+  padding: 18px 0;
   border-bottom: 1px solid rgba(255, 255, 255, 0.16);
   text-decoration: none;
 }
 
 .contact-list span {
+  display: block;
+  margin-bottom: 6px;
   color: #b9c7d2;
   font-size: 0.76rem;
   font-weight: 750;
@@ -1277,8 +1282,12 @@ p {
 }
 
 .contact-list strong {
+  display: block;
   overflow-wrap: anywhere;
-  text-align: right;
+  color: #fff;
+  font-size: 0.98rem;
+  line-height: 1.45;
+  text-align: left;
 }
 
 .contact-list a:hover strong,
@@ -1679,14 +1688,8 @@ p {
     aspect-ratio: 16 / 10;
   }
 
-  .contact-list a,
-  .contact-list div {
-    display: grid;
-    gap: 3px;
-  }
-
-  .contact-list strong {
-    text-align: left;
+  .contact-list {
+    grid-template-columns: 1fr;
   }
 
   .footer-layout {

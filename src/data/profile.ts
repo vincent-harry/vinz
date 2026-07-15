@@ -7,7 +7,7 @@ export const profile = {
   location: "San Pedro City, Laguna",
   email: "vince.trayvilla@gmail.com",
   phone: "+63 994 997 5241",
-  linkedin: "https://www.linkedin.com/in/vincent-harry-trayvilla",
+  linkedin: "https://www.linkedin.com/in/vincent-harry-trayvilla-160644331/",
   github: "https://github.com/vincent-harry",
   portfolio: "https://vhhtrayvilla-portfolio.vercel.app/",
   cv: "/documents/cv/vincent-trayvilla-cv.pdf",

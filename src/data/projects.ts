@@ -88,7 +88,7 @@ export const academicProjects: AcademicProject[] = [
     ],
   },
   {
-    year: "Fourth Year",
+    year: "Third Year",
     title: "E-Commerce Ticketing System",
     category: "Machine Problem | Web Development Project",
     overview:
@@ -107,17 +107,17 @@ export const academicProjects: AcademicProject[] = [
       "The project expanded my experience with web application structure, database-backed records, and transaction-oriented interfaces.",
     images: [
       {
-        src: "/assets/machine problem/4th yr/nowshowing webdev.png",
+        src: "/assets/machine problem/3rd yr/nowshowing webdev.png",
         alt: "E-Commerce Ticketing System now-showing page",
         caption: "Now-showing movie page",
       },
       {
-        src: "/assets/machine problem/4th yr/webdev4thyr.png",
+        src: "/assets/machine problem/3rd yr/booking-interface.png",
         alt: "E-Commerce Ticketing System booking interface",
         caption: "Movie ticket booking interface",
       },
       {
-        src: "/assets/machine problem/4th yr/webticket.png",
+        src: "/assets/machine problem/3rd yr/webticket.png",
         alt: "Generated movie ticket from the E-Commerce Ticketing System",
         caption: "Generated ticket output",
       },

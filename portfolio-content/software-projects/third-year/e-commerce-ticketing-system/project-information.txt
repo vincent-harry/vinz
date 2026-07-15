@@ -1,0 +1,11 @@
+Project title: Web-Based Movie Ticketing System
+Academic year: Third Year
+Project category: Machine Problem | Web Development Project
+Overview: A web-based movie ticketing system developed from March to May 2024.
+Purpose: Present movies, process ticket bookings, and manage movie-distributor information through a web interface.
+Main features: Now-showing movie presentation, ticket selection, booking workflow, generated ticket display, and movie distributor management.
+My contribution: Developed the movie ticketing system and its database-backed booking features.
+Technologies used: ASP.NET, C#, and MS Access
+Learning outcome: Strengthened my understanding of web application structure, database-backed records, and transaction-oriented interfaces.
+GitHub URL (optional):
+Live demo URL (optional):

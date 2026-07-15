@@ -10,7 +10,7 @@ This folder is the authoring workspace for materials that will be reviewed and c
 - Complete Daily Journal: replace `practicum/appendices/7-complete-daily-journal.pdf`.
 - Submission files should be stored locally; the public website does not depend on external cloud-storage links.
 
-The competency-based CV, endorsement letter, practicum acceptance, liability waiver, training plan, and complete daily journal are verified local files. The Practicum Learning Module Path Proposal has not been supplied and is intentionally not linked. Generic certificate/seminar files and other zero-byte replacement slots must not be published or linked.
+The competency-based CV, endorsement letter, practicum acceptance, liability waiver, training plan, and complete daily journal are verified local files. Generic certificate/seminar files and other zero-byte replacement slots must not be published or linked.
 
 ## Adding Materials
 

@@ -42,12 +42,6 @@ export const appendices: AppendixDocument[] = [
     file: "/documents/practicum/appendices/5-training-plan.pdf",
   },
   {
-    number: "6.0",
-    title: "Practicum Learning Module Path Proposal",
-    description:
-      "Required Module 3 appendix. A legitimate source document was not included in the supplied portfolio files.",
-  },
-  {
     number: "7.0",
     title: "Complete Daily Journal",
     description:

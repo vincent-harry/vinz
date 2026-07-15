@@ -1,0 +1,42 @@
+---
+import type { PracticumScreenshot } from "../data/practicum";
+
+interface Props {
+  images: PracticumScreenshot[];
+}
+
+const { images } = Astro.props;
+---
+
+<div class="practicum-gallery" aria-label="Biñan Access Card system feature screenshots">
+  {
+    images.map((image) => (
+      <figure class="practicum-figure">
+        <header>
+          <p>Figure {image.number}</p>
+          <h3>{image.title}</h3>
+        </header>
+        <button
+          class="practicum-image-button"
+          type="button"
+          data-lightbox={image.src}
+          data-lightbox-title={`Figure ${image.number}: ${image.title}`}
+          aria-label={`View Figure ${image.number}, ${image.title}, full size`}
+        >
+          <img
+            src={image.src}
+            alt={image.alt}
+            width={image.width}
+            height={image.height}
+            loading="lazy"
+            decoding="async"
+          />
+        </button>
+        <figcaption>
+          <p>{image.caption}</p>
+          {image.relatedWork && <p class="related-work"><strong>Related task:</strong> {image.relatedWork}</p>}
+        </figcaption>
+      </figure>
+    ))
+  }
+</div>

@@ -1,0 +1,148 @@
+---
+import SectionHeading from "./SectionHeading.astro";
+import SkillGroup from "./SkillGroup.astro";
+import { profile, experience, education } from "../data/profile";
+import { skillGroups } from "../data/skills";
+import { credentials } from "../data/certificates";
+---
+
+<section class="section section-muted" id="cv" aria-labelledby="cv-heading">
+  <div class="container">
+    <SectionHeading
+      id="cv-heading"
+      eyebrow="Curriculum Vitae"
+      title="Curriculum Vitae"
+      intro="Professional and Academic Background"
+    />
+
+    <div class="cv-actions">
+      <a class="btn btn-primary" href={profile.cv} target="_blank" rel="noopener noreferrer">
+        View CV PDF
+      </a>
+      <a
+        class="btn btn-dark"
+        href={profile.cv}
+        target="_blank"
+        rel="noopener noreferrer"
+        download
+      >
+        Download CV
+      </a>
+    </div>
+
+    <article class="cv-document">
+      <div class="cv-nameplate">
+        <p class="cv-person-name">{profile.name}</p>
+        <p>{profile.title}</p>
+        <div class="cv-contact-line">
+          <span>{profile.location}</span>
+          <a href={`mailto:${profile.email}`}>{profile.email}</a>
+          <a href={`tel:${profile.phone.replace(/\s/g, "")}`}>{profile.phone}</a>
+        </div>
+      </div>
+
+      <section class="cv-section">
+        <h3>Summary</h3>
+        <p>
+          {profile.summary} I am seeking an entry-level role in IT support, systems development,
+          quality assurance, or web applications.
+        </p>
+      </section>
+
+      <section class="cv-section">
+        <h3>Work Experience</h3>
+        <div class="cv-entry-heading">
+          <div>
+            <h4>{experience.organization}</h4>
+            <p>{experience.location} | {experience.role}</p>
+          </div>
+          <p>{experience.period}</p>
+        </div>
+        <p><strong>Assigned Project:</strong> {experience.project}</p>
+        <ul class="plain-list">
+          {experience.highlights.map((highlight) => <li>{highlight}</li>)}
+        </ul>
+      </section>
+
+      <section class="cv-section">
+        <h3>Academic Projects</h3>
+        <div class="cv-entry-heading">
+          <div>
+            <h4>PLANTERAID</h4>
+            <p>Web-Based Soil Monitoring and Recommendation System | Capstone Project</p>
+          </div>
+          <p>2025 - 2026</p>
+        </div>
+        <p>
+          An IoT-enabled web system designed to monitor soil moisture, temperature, humidity,
+          and location data and provide recommendations that support field decisions.
+        </p>
+        <p>
+          <strong>Technology Stack:</strong> C#, Blazor .NET Core 8.0, HTML, CSS, JavaScript,
+          SQL Server, SQL Server Management Studio, Arduino IDE, ESP32/Lolin32,
+          soil-moisture sensor, SHT31 temperature and humidity sensor, and GPS integration.
+        </p>
+
+        <div class="cv-entry-heading">
+          <div>
+            <h4>E-Commerce Ticketing System</h4>
+            <p>Web Developer</p>
+          </div>
+          <p>Mar 2024 - May 2024</p>
+        </div>
+        <p>
+          Developed a movie ticketing system using ASP.NET (C#) with an MS Access (MDB)
+          database, featuring ticket booking and movie distributor management.
+        </p>
+      </section>
+
+      <section class="cv-section">
+        <h3>Education</h3>
+        {
+          education.map((entry) => (
+            <div class="education-entry">
+              <div class="cv-entry-heading">
+                <div>
+                  <h4>{entry.school}</h4>
+                  <p>{entry.location}</p>
+                </div>
+                <p>{entry.period}</p>
+              </div>
+              <p><strong>{entry.program}</strong></p>
+              <p>{entry.details}</p>
+            </div>
+          ))
+        }
+      </section>
+
+      <section class="cv-section">
+        <h3>Certifications</h3>
+        <ul class="two-column-list">
+          {credentials.map((item) => <li>{item.title} | {item.date}</li>)}
+        </ul>
+      </section>
+
+      <section class="cv-section">
+        <h3>Skills and Expertise</h3>
+        <div class="skills-grid cv-skills">
+          {skillGroups.map((group) => <SkillGroup title={group.title} skills={group.skills} />)}
+        </div>
+      </section>
+
+      <section class="cv-section cv-additional">
+        <div>
+          <h3>Languages</h3>
+          <p>English | Filipino</p>
+        </div>
+        <div>
+          <h3>Professional Links</h3>
+          <div class="professional-links">
+            <a href={profile.linkedin} target="_blank" rel="noopener noreferrer">LinkedIn</a>
+            <a href={profile.github} target="_blank" rel="noopener noreferrer">GitHub</a>
+            <a href={profile.portfolio} target="_blank" rel="noopener noreferrer">Portfolio</a>
+          </div>
+        </div>
+      </section>
+    </article>
+  </div>
+</section>

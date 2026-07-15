@@ -1,0 +1,141 @@
+---
+import SectionHeading from "./SectionHeading.astro";
+import PracticumGallery from "./PracticumGallery.astro";
+import { practicum, practicumScreenshots } from "../data/practicum";
+---
+
+<section class="section" id="practicum" aria-labelledby="practicum-heading">
+  <div class="container">
+    <SectionHeading
+      id="practicum-heading"
+      eyebrow="Practicum Final Report"
+      title="Biñan Access Card Management Information System"
+      intro="Final report for my practicum engagement with the City Government of Biñan."
+    />
+
+    <dl class="report-facts">
+      <div><dt>Host Organization</dt><dd>{practicum.host}</dd></div>
+      <div><dt>Assigned Project</dt><dd>{practicum.project}</dd></div>
+      <div><dt>Role</dt><dd>{practicum.role}</dd></div>
+      <div><dt>Period</dt><dd>{practicum.period}</dd></div>
+    </dl>
+
+    <article class="practicum-article">
+      <section class="report-chapter">
+        <p class="report-number">01</p>
+        <div>
+          <h3>Overview of the Practicum Engagement</h3>
+          {practicum.overview.map((paragraph) => <p>{paragraph}</p>)}
+        </div>
+      </section>
+
+      <section class="report-chapter">
+        <p class="report-number">02</p>
+        <div>
+          <h3>Discussion of the Nature of Tasks</h3>
+          {practicum.natureOfTasks.map((paragraph) => <p>{paragraph}</p>)}
+        </div>
+      </section>
+
+      <section class="report-chapter">
+        <p class="report-number">03</p>
+        <div>
+          <h3>Software Used</h3>
+          <div class="report-item-grid">
+            {practicum.software.map((item) => (
+              <article class="report-item">
+                <h4>{item.name}</h4>
+                <p>{item.purpose}</p>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section class="report-chapter">
+        <p class="report-number">04</p>
+        <div>
+          <h3>Hardware Used</h3>
+          <p>{practicum.hardwareIntroduction}</p>
+          <div class="report-item-grid">
+            {practicum.hardware.map((item) => (
+              <article class="report-item">
+                <h4>{item.name}</h4>
+                <p>{item.purpose}</p>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section class="report-chapter">
+        <p class="report-number">05</p>
+        <div>
+          <h3>Software Development Outputs</h3>
+          <div class="report-item-grid">
+            {practicum.outputs.map((item) => (
+              <article class="report-item">
+                <h4>{item.name}</h4>
+                <p>{item.purpose}</p>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section class="report-chapter">
+        <p class="report-number">06</p>
+        <div>
+          <h3>Scope of the Project</h3>
+          <p>{practicum.scopeIntroduction}</p>
+          <ul class="plain-list scope-list">
+            {practicum.scope.map((item) => <li>{item}</li>)}
+          </ul>
+          <p class="report-note">
+            The complete application was developed collaboratively. My contribution concentrated
+            on model and database work, validation, testing, documentation, and coordination of
+            database and branch updates.
+          </p>
+        </div>
+      </section>
+    </article>
+
+    <section class="portfolio-subsection practicum-screens" aria-labelledby="practicum-screens-heading">
+      <div class="subsection-heading">
+        <p class="report-number">07</p>
+        <h3 id="practicum-screens-heading">Screen of the Features</h3>
+        <p>
+          These original screenshots document the principal modules and user flows in the local
+          development environment. Select any image to view it at full size.
+        </p>
+      </div>
+      <PracticumGallery images={practicumScreenshots} />
+    </section>
+
+    <article class="practicum-article practicum-closing">
+      <section class="report-chapter">
+        <p class="report-number">08</p>
+        <div>
+          <h3>Discussion</h3>
+          {practicum.discussion.map((paragraph) => <p>{paragraph}</p>)}
+        </div>
+      </section>
+
+      <section class="report-chapter">
+        <p class="report-number">09</p>
+        <div>
+          <h3>Synthesis of the Practicum Engagement</h3>
+          {practicum.synthesis.map((paragraph) => <p>{paragraph}</p>)}
+        </div>
+      </section>
+
+      <section class="report-chapter">
+        <p class="report-number">10</p>
+        <div>
+          <h3>Realization and Conclusion</h3>
+          {practicum.conclusion.map((paragraph) => <p>{paragraph}</p>)}
+        </div>
+      </section>
+    </article>
+  </div>
+</section>

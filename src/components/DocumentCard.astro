@@ -1,0 +1,43 @@
+---
+import type { AppendixDocument } from "../data/appendices";
+
+interface Props {
+  document: AppendixDocument;
+}
+
+const { document } = Astro.props;
+---
+
+<article class="document-card">
+  <p class="document-number">Appendix {document.number}</p>
+  <h3>{document.title}</h3>
+  <p>{document.description}</p>
+
+  {
+    document.file ? (
+      <div class="card-actions">
+        <a
+          class="btn btn-secondary"
+          href={document.file}
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label={`View Appendix ${document.number}: ${document.title} in a new tab`}
+        >
+          View PDF
+        </a>
+        <a
+          class="btn btn-dark"
+          href={document.file}
+          target="_blank"
+          rel="noopener noreferrer"
+          download
+          aria-label={`Download Appendix ${document.number}: ${document.title}`}
+        >
+          Download
+        </a>
+      </div>
+    ) : (
+      <p class="document-unavailable">Source document not provided</p>
+    )
+  }
+</article>

@@ -1,43 +1,53 @@
 ---
-const pathname = Astro.url.pathname;
 const links = [
-  { href: "/", label: "Home", path: "/" },
-  { href: "/cv/", label: "Curriculum Vitae", path: "/cv/" },
-  { href: "/skills/", label: "Skills", path: "/skills/" },
-  { href: "/certificates/", label: "Certificates", path: "/certificates/" },
-  { href: "/seminars/", label: "Seminars", path: "/seminars/" },
-  { href: "/projects/", label: "Software Developed", path: "/projects/" },
-  { href: "/capstone/", label: "Capstone Project", path: "/capstone/" },
-  { href: "/practicum/", label: "Practicum Final Report", path: "/practicum/" },
-  { href: "/contact/", label: "Contact", path: "/contact/", cta: true },
+  { href: "#home", label: "Home" },
+  { href: "#about", label: "About Me" },
+  { href: "#cv", label: "Curriculum Vitae" },
+  { href: "#skills", label: "Skills" },
+  { href: "#certificates", label: "Certificates" },
+  { href: "#seminars", label: "Seminars" },
+  { href: "#projects", label: "Software Developed" },
+  { href: "#capstone", label: "Capstone Project" },
+  { href: "#practicum", label: "Practicum" },
+  { href: "#appendices", label: "Appendices" },
+  { href: "#contact", label: "Contact", cta: true },
 ];
 ---
 
-<header class="site-header">
+<header class="site-header" data-site-header>
   <nav class="site-nav container-wide" aria-label="Primary navigation">
-    <a class="brand" href="/" aria-label="Vincent Trayvilla portfolio home">
+    <a class="brand" href="#home" aria-label="Vincent Trayvilla portfolio home">
       <span class="brand-mark" aria-hidden="true">VT</span>
       <span>Vincent Trayvilla</span>
     </a>
-    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-nav">
-      <span class="sr-only">Toggle navigation</span>
-      <span></span><span></span><span></span>
+
+    <button
+      class="nav-toggle"
+      type="button"
+      aria-expanded="false"
+      aria-controls="primary-nav"
+      aria-label="Open navigation"
+    >
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
     </button>
+
     <ul class="nav-links" id="primary-nav">
-      {links.map((link) => {
-        const active = link.path === "/" ? pathname === "/" : pathname === link.path;
-        return (
+      {
+        links.map((link, index) => (
           <li>
             <a
               href={link.href}
-              class:list={{ active, "nav-contact": link.cta }}
-              aria-current={active ? "page" : undefined}
+              class:list={{ active: index === 0, "nav-contact": link.cta }}
+              aria-current={index === 0 ? "location" : undefined}
+              data-section-link
             >
               {link.label}
             </a>
           </li>
-        );
-      })}
+        ))
+      }
     </ul>
   </nav>
 </header>

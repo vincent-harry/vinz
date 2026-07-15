@@ -1,0 +1,99 @@
+---
+import SectionHeading from "./SectionHeading.astro";
+import ScreenshotGallery from "./ScreenshotGallery.astro";
+import { capstone, capstoneImages } from "../data/capstone";
+
+const guiImages = capstoneImages.filter((image) => image.group === "GUI Screenshots");
+const hardwareImages = capstoneImages.filter((image) => image.group === "Hardware");
+const testingImages = capstoneImages.filter((image) => image.group === "Testing");
+---
+
+<section class="section section-muted" id="capstone" aria-labelledby="capstone-heading">
+  <div class="container">
+    <SectionHeading
+      id="capstone-heading"
+      eyebrow="Fourth Year Capstone Project"
+      title="PlanterAid"
+      intro={capstone.title}
+    />
+
+    <article class="report-content reading-width capstone-summary">
+      <section>
+        <h3>Project Overview</h3>
+        <p>{capstone.overview}</p>
+      </section>
+      <section>
+        <h3>Problem Addressed</h3>
+        <p>{capstone.problem}</p>
+      </section>
+      <section>
+        <h3>Objectives</h3>
+        <ul class="plain-list">
+          {capstone.objectives.map((objective) => <li>{objective}</li>)}
+        </ul>
+      </section>
+      <section>
+        <h3>System Features</h3>
+        <ul class="feature-checklist">
+          {capstone.features.map((feature) => <li>{feature}</li>)}
+        </ul>
+      </section>
+    </article>
+
+    <section class="portfolio-subsection" aria-labelledby="capstone-gui-heading">
+      <div class="subsection-heading">
+        <p class="eyebrow">Screenshots of the GUI</p>
+        <h3 id="capstone-gui-heading">System Interface</h3>
+        <p>PlanterAid dashboard, monitoring, and notification interfaces.</p>
+      </div>
+      <ScreenshotGallery images={guiImages} label="PlanterAid GUI screenshots" />
+    </section>
+
+    <section class="portfolio-subsection technology-layout" aria-label="PlanterAid technologies">
+      <div class="detail-card">
+        <h3>Software Used</h3>
+        <ul class="tag-list large">
+          {capstone.software.map((item) => <li>{item}</li>)}
+        </ul>
+      </div>
+      <div class="detail-card">
+        <h3>Hardware Used</h3>
+        <ul class="plain-list">
+          {capstone.hardware.map((item) => <li>{item}</li>)}
+        </ul>
+        <p class="note">The prototype enclosure is weather-resistant, not waterproof.</p>
+      </div>
+    </section>
+
+    <section class="portfolio-subsection" aria-labelledby="capstone-hardware-heading">
+      <div class="subsection-heading">
+        <p class="eyebrow">Prototype Hardware</p>
+        <h3 id="capstone-hardware-heading">Sensor Nodes and Field Placement</h3>
+      </div>
+      <ScreenshotGallery images={hardwareImages} label="PlanterAid hardware images" />
+    </section>
+
+    <section class="portfolio-subsection" aria-labelledby="capstone-testing-heading">
+      <div class="subsection-heading">
+        <p class="eyebrow">Testing</p>
+        <h3 id="capstone-testing-heading">Validation and Continuous Operation</h3>
+        <p>{capstone.testing}</p>
+      </div>
+      <ScreenshotGallery images={testingImages} label="PlanterAid testing images" />
+      <div class="report-content reading-width capstone-closing">
+        <section>
+          <h3>Methodology</h3>
+          <p>{capstone.methodology}</p>
+        </section>
+        <section>
+          <h3>My Contributions</h3>
+          <p>{capstone.contribution}</p>
+        </section>
+        <section>
+          <h3>Project Outcome</h3>
+          <p>{capstone.outcome}</p>
+        </section>
+      </div>
+    </section>
+  </div>
+</section>

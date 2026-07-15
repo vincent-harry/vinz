@@ -14,7 +14,7 @@ const { images, label } = Astro.props;
 ---
 
 <div class="screenshot-grid" aria-label={label}>
-  {images.map((image, index) => (
+  {images.map((image) => (
     <figure class="screenshot-card">
       <button
         class="gallery-button"
@@ -23,7 +23,7 @@ const { images, label } = Astro.props;
         data-lightbox-title={image.caption}
         aria-label={`View ${image.caption} full size`}
       >
-        <img src={image.src} alt={image.alt} loading={index > 1 ? "lazy" : "eager"} decoding="async" />
+        <img src={image.src} alt={image.alt} loading="lazy" decoding="async" />
       </button>
       <figcaption>{image.caption}</figcaption>
     </figure>

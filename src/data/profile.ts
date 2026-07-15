@@ -12,7 +12,7 @@ export const profile = {
   portfolio: "https://vhhtrayvilla-portfolio.vercel.app/",
   cv: "/documents/cv/vincent-trayvilla-cv.pdf",
   summary:
-    "I am a graduating Bachelor of Science in Information Technology student with hands-on practicum experience in web-based information systems, database work, system testing, documentation, IT support, basic networking, and software and hardware troubleshooting.",
+    "Graduating Bachelor of Science in Information Technology student with hands-on practicum experience as a Web Systems Developer and IT Support Intern in a local government environment. Skilled in web-based information systems, database work, system testing, documentation, user support, basic networking, and software and hardware troubleshooting.",
 };
 
 export const experience = {

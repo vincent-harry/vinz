@@ -43,4 +43,17 @@ export const skillGroups = [
       "Internet-access support",
     ],
   },
+  {
+    title: "Professional Skills",
+    skills: [
+      "System testing",
+      "Quality assurance",
+      "Technical documentation",
+      "Data validation",
+      "Troubleshooting",
+      "Team collaboration",
+      "Version-control coordination",
+      "User support",
+    ],
+  },
 ];

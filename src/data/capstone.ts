@@ -5,6 +5,11 @@ export const capstone = {
     "PlanterAid is a group Capstone project that combines a web dashboard with IoT sensor nodes to monitor soil moisture, temperature, and humidity across multiple planting zones. The system presents readings, recommendations, and alerts that support informed crop-care decisions.",
   problem:
     "Promised Land Farm relied heavily on manual observation and did not have a structured system for recording environmental readings or issuing timely alerts when crop conditions moved outside acceptable ranges.",
+  objectives: [
+    "Design, develop, and implement an IoT-integrated, web-based multi-zone system that monitors soil moisture, humidity, and temperature in real time.",
+    "Integrate a dashboard that presents environmental readings, recommendations, and alert notifications for crop-stress and environmental concerns.",
+    "Use GPS modules to associate monitoring data with individual farm zones for spatial tracking.",
+  ],
   features: [
     "Real-time and historical dashboard views for soil moisture, temperature, and humidity",
     "Multi-zone sensor monitoring and node management",
@@ -35,7 +40,9 @@ export const capstone = {
     "Weather-resistant prototype enclosure",
   ],
   methodology:
-    "The project used an iterative Extreme Programming approach, supported by sensor validation, isolation testing, continuous-operation testing, transmission checks, front-end tests, and user acceptance testing.",
+    "The project used Extreme Programming, an iterative Agile methodology centered on short development cycles, technical review, user feedback, and close collaboration with the farm beneficiary.",
+  testing:
+    "System validation covered sensor readings, hardware and software compatibility, wireless data transmission, dashboard behavior, GPS reference checks, continuous operation, and user acceptance. The available portfolio images document representative field and continuous-operation setups.",
   contribution:
     "This was a collaborative group project. My verified work included participation in research and field interviews, system and database work, testing, technical documentation, and preparation of Capstone figures and progress materials.",
   outcome:

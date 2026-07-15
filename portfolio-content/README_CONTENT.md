@@ -8,9 +8,9 @@ This folder is the authoring workspace for materials that will be reviewed and c
 - Final CV: update `cv/Vincent-Trayvilla-Final-CV.pdf` when a newer verified version is available.
 - Practicum appendices: replace the matching numbered PDF in `practicum/appendices/`.
 - Complete Daily Journal: replace `practicum/appendices/7-complete-daily-journal.pdf`.
-- Submission files should be stored locally. `practicum/appendices/google-drive-links.txt` records that no Google Drive links are used.
+- Submission files should be stored locally; the public website does not depend on external cloud-storage links.
 
-The profile picture, generic certificate/seminar files, Capstone manuscript, and practicum appendix PDFs are empty replacement slots until the real documents are added. The CV is a completed public version. Do not publish or link any empty slot.
+The competency-based CV, endorsement letter, practicum acceptance, liability waiver, training plan, and complete daily journal are verified local files. The Practicum Learning Module Path Proposal has not been supplied and is intentionally not linked. Generic certificate/seminar files and other zero-byte replacement slots must not be published or linked.
 
 ## Adding Materials
 

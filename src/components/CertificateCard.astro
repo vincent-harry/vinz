@@ -22,8 +22,31 @@ const { credential } = Astro.props;
   )}
   <div class="credential-content">
     <p class="credential-type">{credential.category} | {credential.date}</p>
-    <h2>{credential.title}</h2>
-    <p class="credential-issuer">{credential.issuer}</p>
+    <h3>{credential.title}</h3>
+    {credential.issuer && <p class="credential-issuer">{credential.issuer}</p>}
     <p>{credential.description}</p>
+    {credential.file && (
+      <div class="card-actions">
+        <a
+          class="btn btn-secondary"
+          href={credential.file}
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label={`View ${credential.title} in a new tab`}
+        >
+          View
+        </a>
+        <a
+          class="btn btn-dark"
+          href={credential.file}
+          target="_blank"
+          rel="noopener noreferrer"
+          download
+          aria-label={`Download ${credential.title}`}
+        >
+          Download
+        </a>
+      </div>
+    )}
   </div>
 </article>

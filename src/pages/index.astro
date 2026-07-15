@@ -1,22 +1,38 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import SectionHeading from "../components/SectionHeading.astro";
+import CvSection from "../components/CvSection.astro";
+import SkillGroup from "../components/SkillGroup.astro";
+import CertificateCard from "../components/CertificateCard.astro";
+import ProjectCard from "../components/ProjectCard.astro";
+import CapstoneSection from "../components/CapstoneSection.astro";
+import PracticumSection from "../components/PracticumSection.astro";
+import DocumentCard from "../components/DocumentCard.astro";
 import { profile } from "../data/profile";
+import { skillGroups } from "../data/skills";
+import { credentials } from "../data/certificates";
 import { academicProjects } from "../data/projects";
+import { appendices } from "../data/appendices";
+
+const certificateItems = credentials.filter((item) => item.category === "Certificate");
+const seminarItems = credentials.filter(
+  (item) => item.category === "Seminar" || item.category === "Training",
+);
 ---
 
 <BaseLayout
   title="Vincent Harry H. Trayvilla | IT Portfolio"
-  description="Academic IT portfolio of Vincent Harry H. Trayvilla featuring his CV, programming skills, credentials, software projects, machine problems, and PlanterAid Capstone project."
+  description="Single-page academic IT portfolio of Vincent Harry H. Trayvilla featuring his curriculum vitae, skills, credentials, software projects, PlanterAid Capstone project, and practicum final report."
   path="/"
 >
-  <section class="hero">
+  <section class="hero" id="home" aria-labelledby="home-heading">
     <div class="container hero-layout">
       <div class="hero-intro">
         <p class="eyebrow">Information Technology Portfolio</p>
-        <h1>{profile.name}</h1>
+        <h1 id="home-heading">{profile.name}</h1>
         <p class="hero-title">{profile.title}</p>
       </div>
+
       <figure class="portrait-panel">
         <img
           class="profile-portrait"
@@ -28,78 +44,172 @@ import { academicProjects } from "../data/projects";
           fetchpriority="high"
         />
       </figure>
+
       <div class="hero-details">
-        <p class="hero-summary">{profile.summary}</p>
-        <p class="hero-school">{profile.program}<br />{profile.school} | {profile.graduation}</p>
+        <p class="hero-summary">
+          I develop and support practical web-based information systems, with experience in
+          database work, testing, troubleshooting, documentation, and day-to-day IT support.
+        </p>
+        <p class="hero-school">
+          {profile.program}<br />
+          {profile.school} | {profile.graduation}
+        </p>
         <div class="button-row">
-          <a class="btn btn-primary" href="/cv/">View Curriculum Vitae</a>
-          <a class="btn btn-secondary" href="/projects/">View Projects</a>
-          <a class="btn btn-outline-light" href="/practicum/">View Practicum Final Report</a>
-          <a class="btn btn-outline-light" href={profile.cv} target="_blank" rel="noopener noreferrer" download>Download CV</a>
+          <a class="btn btn-primary" href="#cv">View Curriculum Vitae</a>
+          <a class="btn btn-secondary" href="#projects">View Projects</a>
+          <a class="btn btn-dark" href="#practicum">View Practicum Final Report</a>
+          <a
+            class="btn btn-secondary"
+            href={profile.cv}
+            target="_blank"
+            rel="noopener noreferrer"
+            download
+          >
+            Download CV
+          </a>
         </div>
       </div>
     </div>
   </section>
 
-  <section class="section" id="about">
+  <section class="section" id="about" aria-labelledby="about-heading">
     <div class="container two-column-section">
       <SectionHeading
+        id="about-heading"
         eyebrow="About Me"
-        title="Developing practical systems and supporting their users."
-        intro="My academic work and practicum experience have developed my interests in web-based systems, database work, testing, documentation, troubleshooting, and day-to-day technical support."
+        title="Development, testing, and technical support"
+        intro="I am preparing for entry-level work where careful system development and dependable user support matter equally."
       />
       <div class="prose-block">
         <p>
-          I approach information technology as a combination of development, analysis, testing, and support. My work has included database-backed web applications, academic mobile and desktop projects, system documentation, and hardware and network troubleshooting.
+          I am a graduating Information Technology student with hands-on experience in web-based
+          information systems, database work, system testing, troubleshooting, and technical
+          documentation. My academic and practicum work has involved reviewing how interfaces,
+          models, controllers, and databases work together.
         </p>
         <p>
-          I am preparing for entry-level work in IT support, systems development, quality assurance, or web applications, where careful problem solving and clear communication are as important as writing code.
+          I also have practical exposure to Windows setup, basic networking, LAN and Ethernet
+          checks, hardware and software support, quality assurance, user assistance, and
+          Git-based team collaboration. I approach technical work by checking details carefully,
+          documenting changes clearly, and asking for review when a task affects shared systems.
         </p>
       </div>
     </div>
   </section>
 
-  <section class="section section-muted">
+  <CvSection />
+
+  <section class="section" id="skills" aria-labelledby="skills-heading">
     <div class="container">
       <SectionHeading
-        eyebrow="Selected Work"
-        title="Software developed from first year to fourth year"
-        intro="The portfolio includes verified machine-problem interfaces and a collaborative IoT Capstone project."
+        id="skills-heading"
+        eyebrow="Technical Capabilities"
+        title="Skills"
+        intro="Technologies and support capabilities demonstrated through academic work, Capstone development, and practicum assignments."
       />
-      <div class="feature-grid">
-        {academicProjects.map((project) => (
-          <article class="feature-card">
-            <img src={project.images[0].src} alt={project.images[0].alt} loading="lazy" />
-            <div>
-              <p class="project-meta">{project.year}</p>
-              <h3>{project.title}</h3>
-              <p>{project.overview}</p>
-            </div>
-          </article>
-        ))}
-        <article class="feature-card feature-card-capstone">
-          <img src="/assets/images/capstone/multi-zone-dashboard.png" alt="PlanterAid multi-zone environmental monitoring dashboard" loading="lazy" />
-          <div>
-            <p class="project-meta">Fourth Year Capstone</p>
-            <h3>PlanterAid</h3>
-            <p>Web-based soil monitoring, recommendations, and alert notifications using IoT sensor nodes.</p>
-          </div>
-        </article>
-      </div>
-      <div class="section-actions">
-        <a class="btn btn-primary" href="/projects/">Software and Machine Problems</a>
-        <a class="btn btn-secondary" href="/capstone/">Capstone Project</a>
+      <div class="skills-grid">
+        {skillGroups.map((group) => <SkillGroup title={group.title} skills={group.skills} />)}
       </div>
     </div>
   </section>
 
-  <section class="section home-cta">
-    <div class="container home-cta-layout">
-      <div>
-        <p class="eyebrow">Contact</p>
-        <h2>Let&apos;s discuss academic projects and IT opportunities.</h2>
+  <section class="section section-muted" id="certificates" aria-labelledby="certificates-heading">
+    <div class="container">
+      <SectionHeading
+        id="certificates-heading"
+        eyebrow="Credentials"
+        title="Certificates"
+        intro="Professional and technical credentials recorded in my current curriculum vitae."
+      />
+      <div class="credential-grid">
+        {certificateItems.map((credential) => <CertificateCard credential={credential} />)}
       </div>
-      <a class="btn btn-dark" href="/contact/">Contact Me</a>
+    </div>
+  </section>
+
+  <section class="section" id="seminars" aria-labelledby="seminars-heading">
+    <div class="container">
+      <SectionHeading
+        id="seminars-heading"
+        eyebrow="Professional Learning"
+        title="Seminars and Trainings"
+        intro="Verified seminar records and training participation related to emerging technology and career readiness."
+      />
+      <div class="credential-grid seminar-grid">
+        {seminarItems.map((credential) => <CertificateCard credential={credential} />)}
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-muted" id="projects" aria-labelledby="projects-heading">
+    <div class="container">
+      <SectionHeading
+        id="projects-heading"
+        eyebrow="Software Developed"
+        title="Academic Projects and Machine Problems"
+        intro="Verified first-year, second-year, and fourth-year projects with feature discussions, software used, screenshots, and learning outcomes."
+      />
+      <div class="project-list">
+        {academicProjects.map((project, index) => <ProjectCard project={project} index={index} />)}
+      </div>
+    </div>
+  </section>
+
+  <CapstoneSection />
+
+  <PracticumSection />
+
+  <section class="section section-muted" id="appendices" aria-labelledby="appendices-heading">
+    <div class="container">
+      <SectionHeading
+        id="appendices-heading"
+        eyebrow="Supporting Documents"
+        title="Appendices"
+        intro="Required Module 3 documents connected directly to the final portfolio submission."
+      />
+      <div class="document-grid">
+        {appendices.map((document) => <DocumentCard document={document} />)}
+      </div>
+    </div>
+  </section>
+
+  <section class="section contact-section" id="contact" aria-labelledby="contact-heading">
+    <div class="container contact-layout">
+      <div class="contact-intro">
+        <p class="eyebrow">Contact</p>
+        <h2 id="contact-heading">Professional Contact Information</h2>
+        <p>
+          Email is the most direct way to contact me regarding academic projects, practicum work,
+          and entry-level IT opportunities.
+        </p>
+        <div class="button-row contact-buttons">
+          <a class="btn btn-secondary" href={`mailto:${profile.email}`}>Email Vincent</a>
+          <a class="btn btn-primary" href={`tel:${profile.phone.replace(/\s/g, "")}`}>Call Mobile</a>
+          <a class="btn btn-secondary" href={profile.linkedin} target="_blank" rel="noopener noreferrer">
+            LinkedIn
+          </a>
+          <a class="btn btn-secondary" href={profile.github} target="_blank" rel="noopener noreferrer">
+            GitHub
+          </a>
+        </div>
+      </div>
+
+      <address class="contact-list">
+        <a href={`mailto:${profile.email}`}><span>Email</span><strong>{profile.email}</strong></a>
+        <a href={`tel:${profile.phone.replace(/\s/g, "")}`}>
+          <span>Mobile</span><strong>{profile.phone}</strong>
+        </a>
+        <a href={profile.linkedin} target="_blank" rel="noopener noreferrer">
+          <span>LinkedIn</span><strong>vincent-harry-trayvilla</strong>
+        </a>
+        <a href={profile.github} target="_blank" rel="noopener noreferrer">
+          <span>GitHub</span><strong>vincent-harry</strong>
+        </a>
+        <a href={profile.portfolio} target="_blank" rel="noopener noreferrer">
+          <span>Portfolio</span><strong>vhhtrayvilla-portfolio.vercel.app</strong>
+        </a>
+        <div><span>Location</span><strong>{profile.location}</strong></div>
+      </address>
     </div>
   </section>
 </BaseLayout>

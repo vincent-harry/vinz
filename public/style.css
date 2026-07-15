@@ -347,11 +347,10 @@ p {
   margin: 0;
   padding: 22px 22px 0;
   overflow: hidden;
-  background: var(--surface-green);
-  border: 1px solid rgba(255, 255, 255, 0.56);
-  border-top: 5px solid var(--gold);
-  border-radius: var(--radius);
-  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.16);
+  background: transparent;
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
 }
 
 .profile-portrait {

@@ -2,7 +2,11 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url><loc>https://vhhtrayvilla-portfolio.vercel.app/</loc></url>
   <url><loc>https://vhhtrayvilla-portfolio.vercel.app/cv/</loc></url>
+  <url><loc>https://vhhtrayvilla-portfolio.vercel.app/skills/</loc></url>
   <url><loc>https://vhhtrayvilla-portfolio.vercel.app/certificates/</loc></url>
+  <url><loc>https://vhhtrayvilla-portfolio.vercel.app/seminars/</loc></url>
   <url><loc>https://vhhtrayvilla-portfolio.vercel.app/projects/</loc></url>
   <url><loc>https://vhhtrayvilla-portfolio.vercel.app/capstone/</loc></url>
+  <url><loc>https://vhhtrayvilla-portfolio.vercel.app/practicum/</loc></url>
+  <url><loc>https://vhhtrayvilla-portfolio.vercel.app/contact/</loc></url>
 </urlset>

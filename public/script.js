@@ -63,7 +63,7 @@ function closeLightbox() {
   if (!lightbox || !lightboxImage) return;
   lightbox.classList.remove("is-open");
   lightbox.setAttribute("aria-hidden", "true");
-  lightboxImage.src = "";
+  lightboxImage.removeAttribute("src");
   activeGalleryIndex = -1;
   if (lastFocusedElement instanceof HTMLElement) lastFocusedElement.focus();
 }
@@ -81,6 +81,12 @@ lightbox?.addEventListener("click", (event) => {
 });
 
 document.addEventListener("keydown", (event) => {
+  if (event.key === "Escape" && navLinks?.classList.contains("is-open")) {
+    closeNavigation();
+    navToggle?.focus();
+    return;
+  }
+
   if (!lightbox?.classList.contains("is-open")) return;
   if (event.key === "Escape") closeLightbox();
   if (event.key === "ArrowLeft") showGalleryItem(activeGalleryIndex - 1);

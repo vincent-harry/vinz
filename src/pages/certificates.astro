@@ -1,43 +1,27 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import PageHeader from "../components/PageHeader.astro";
-import SectionHeading from "../components/SectionHeading.astro";
 import CertificateCard from "../components/CertificateCard.astro";
 import { credentials } from "../data/certificates";
 
 const certificateItems = credentials.filter((item) => item.category === "Certificate" || item.category === "Training");
-const seminarItems = credentials.filter((item) => item.category === "Seminar");
 ---
 
 <BaseLayout
-  title="Certificates and Seminars | Vincent Harry H. Trayvilla"
-  description="Verified certificates, seminars, and training records from the current CV of Vincent Harry H. Trayvilla."
+  title="Certificates and Training | Vincent Harry H. Trayvilla"
+  description="Verified certificates and training records from the current CV of Vincent Harry H. Trayvilla."
   path="/certificates/"
 >
   <PageHeader
     eyebrow="Credentials"
-    title="Certificates, seminars, and training"
+    title="Certificates and Training"
     intro="Credential titles and dates are taken from my current CV. A visual preview is shown only for the certificate file that is available and verified as mine."
   />
 
   <section class="section">
     <div class="container">
-      <SectionHeading title="Certificates and Training" />
       <div class="credential-grid">
         {certificateItems.map((credential) => <CertificateCard credential={credential} />)}
-      </div>
-    </div>
-  </section>
-
-  <section class="section section-muted" id="seminars">
-    <div class="container">
-      <SectionHeading
-        eyebrow="Seminars"
-        title="Seminars and emerging-technology sessions"
-        intro="Seminar records verified from my current curriculum vitae."
-      />
-      <div class="credential-grid seminar-grid">
-        {seminarItems.map((credential) => <CertificateCard credential={credential} />)}
       </div>
     </div>
   </section>

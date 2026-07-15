@@ -14,15 +14,14 @@ import { credentials } from "../data/certificates";
 >
   <PageHeader
     eyebrow="Curriculum Vitae"
-    title="Professional and academic background"
-    intro="A web-based version of my current CV, with my public location limited to San Pedro City, Laguna."
+    title="Professional and Academic Background"
+    intro="Experience, education, projects, certifications, and technical capabilities."
   />
 
   <section class="section section-tight">
     <div class="container cv-actions">
       <a class="btn btn-primary" href={profile.cv} target="_blank" rel="noopener noreferrer">View CV PDF</a>
       <a class="btn btn-secondary" href={profile.cv} download>Download CV</a>
-      <a class="btn btn-text" href={profile.cvFallback} download>Download Editable DOCX</a>
     </div>
   </section>
 
@@ -99,7 +98,14 @@ import { credentials } from "../data/certificates";
 
       <section class="cv-section cv-additional">
         <div><h2>Languages</h2><p>English | Filipino</p></div>
-        <div><h2>Professional Links</h2><p><a href={profile.linkedin}>LinkedIn</a> | <a href={profile.github}>GitHub</a></p></div>
+        <div>
+          <h2>Professional Links</h2>
+          <p>
+            <a href={profile.linkedin} target="_blank" rel="noopener noreferrer" aria-label="Open Vincent Trayvilla's LinkedIn profile in a new tab">LinkedIn</a>
+            <span aria-hidden="true"> | </span>
+            <a href={profile.github} target="_blank" rel="noopener noreferrer" aria-label="Open Vincent Trayvilla's GitHub profile in a new tab">GitHub</a>
+          </p>
+        </div>
       </section>
     </div>
   </article>

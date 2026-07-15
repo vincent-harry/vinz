@@ -11,7 +11,6 @@ export const profile = {
   github: "https://github.com/vincent-harry",
   portfolio: "https://vhhtrayvilla-portfolio.vercel.app/",
   cv: "/documents/cv/vincent-trayvilla-cv.pdf",
-  cvFallback: "/documents/cv/vincent-trayvilla-cv.docx",
   summary:
     "I am a graduating Bachelor of Science in Information Technology student with hands-on practicum experience in web-based information systems, database work, system testing, documentation, IT support, basic networking, and software and hardware troubleshooting.",
 };

@@ -1,9 +1,7 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import SectionHeading from "../components/SectionHeading.astro";
-import SkillGroup from "../components/SkillGroup.astro";
 import { profile } from "../data/profile";
-import { skillGroups } from "../data/skills";
 import { academicProjects } from "../data/projects";
 ---
 
@@ -14,26 +12,32 @@ import { academicProjects } from "../data/projects";
 >
   <section class="hero">
     <div class="container hero-layout">
-      <div class="hero-copy">
+      <div class="hero-intro">
         <p class="eyebrow">Information Technology Portfolio</p>
         <h1>{profile.name}</h1>
         <p class="hero-title">{profile.title}</p>
+      </div>
+      <figure class="portrait-panel">
+        <img
+          class="profile-portrait"
+          src="/assets/images/profile/portfolio_pic-removebg-preview.png"
+          alt="Portrait of Vincent Harry H. Trayvilla"
+          width="450"
+          height="450"
+          decoding="async"
+          fetchpriority="high"
+        />
+      </figure>
+      <div class="hero-details">
         <p class="hero-summary">{profile.summary}</p>
         <p class="hero-school">{profile.program}<br />{profile.school} | {profile.graduation}</p>
         <div class="button-row">
           <a class="btn btn-primary" href="/cv/">View Curriculum Vitae</a>
           <a class="btn btn-secondary" href="/projects/">View Projects</a>
-          <a class="btn btn-text" href={profile.cv} download>Download CV</a>
+          <a class="btn btn-outline-light" href="/practicum/">View Practicum Final Report</a>
+          <a class="btn btn-outline-light" href={profile.cv} download>Download CV</a>
         </div>
       </div>
-      <aside class="profile-panel" aria-label="Professional profile summary">
-        <div class="profile-initials" aria-hidden="true">VT</div>
-        <dl>
-          <div><dt>Program</dt><dd>BS Information Technology</dd></div>
-          <div><dt>Focus</dt><dd>Web systems and IT support</dd></div>
-          <div><dt>Location</dt><dd>{profile.location}</dd></div>
-        </dl>
-      </aside>
     </div>
   </section>
 
@@ -55,20 +59,7 @@ import { academicProjects } from "../data/projects";
     </div>
   </section>
 
-  <section class="section section-muted" id="skills">
-    <div class="container">
-      <SectionHeading
-        eyebrow="Programming Skills"
-        title="Verified technical skills"
-        intro="Technologies and support capabilities listed in my current CV and demonstrated through academic and practicum work."
-      />
-      <div class="skills-grid">
-        {skillGroups.map((group) => <SkillGroup title={group.title} skills={group.skills} />)}
-      </div>
-    </div>
-  </section>
-
-  <section class="section">
+  <section class="section section-muted">
     <div class="container">
       <SectionHeading
         eyebrow="Selected Work"
@@ -102,20 +93,13 @@ import { academicProjects } from "../data/projects";
     </div>
   </section>
 
-  <section class="section contact-section" id="contact">
-    <div class="container contact-layout">
-      <SectionHeading
-        eyebrow="Contact"
-        title="Professional contact information"
-        intro="For academic, project, or entry-level IT opportunities."
-      />
-      <address class="contact-list">
-        <a href={`mailto:${profile.email}`}><span>Email</span><strong>{profile.email}</strong></a>
-        <a href={`tel:${profile.phone.replace(/\s/g, "")}`}><span>Mobile</span><strong>{profile.phone}</strong></a>
-        <a href={profile.linkedin} target="_blank" rel="noopener noreferrer"><span>LinkedIn</span><strong>vincent-harry-trayvilla</strong></a>
-        <a href={profile.github} target="_blank" rel="noopener noreferrer"><span>GitHub</span><strong>vincent-harry</strong></a>
-        <div><span>Location</span><strong>{profile.location}</strong></div>
-      </address>
+  <section class="section home-cta">
+    <div class="container home-cta-layout">
+      <div>
+        <p class="eyebrow">Contact</p>
+        <h2>Let&apos;s discuss academic projects and IT opportunities.</h2>
+      </div>
+      <a class="btn btn-dark" href="/contact/">Contact Me</a>
     </div>
   </section>
 </BaseLayout>

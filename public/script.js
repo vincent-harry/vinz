@@ -12,6 +12,7 @@ const lightboxClose = document.querySelector(".lightbox-close");
 const lightboxPrevious = document.querySelector(".lightbox-prev");
 const lightboxNext = document.querySelector(".lightbox-next");
 const galleryItems = Array.from(document.querySelectorAll("[data-lightbox]"));
+const lightboxOpeners = Array.from(document.querySelectorAll("[data-lightbox-open]"));
 
 let activeGalleryIndex = -1;
 let lastFocusedElement = null;
@@ -187,6 +188,14 @@ function closeLightbox() {
 
 galleryItems.forEach((item, index) => {
   item.addEventListener("click", () => openLightbox(index));
+});
+
+lightboxOpeners.forEach((opener) => {
+  opener.addEventListener("click", () => {
+    const source = opener.dataset.lightboxOpen || "";
+    const index = galleryItems.findIndex((item) => item.dataset.lightbox === source);
+    if (index >= 0) openLightbox(index);
+  });
 });
 
 lightboxClose?.addEventListener("click", closeLightbox);

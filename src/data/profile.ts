@@ -19,13 +19,15 @@ export const experience = {
   organization: "City Government of Biñan",
   location: "Biñan City, Laguna",
   role: "Web Systems Developer and IT Support Intern",
-  period: "April 2026 - July 2026",
+  period: "Apr 2026 – Jul 2026",
   project: "Biñan Access Card Management Information System",
   highlights: [
-    "Contributed to a web-based management information system using CodeIgniter 4, PHP, MySQL, Bootstrap, jQuery, and Ajax.",
+    "Contributed to the Biñan Access Card Management Information System using CodeIgniter 4, PHP, MySQL, Bootstrap, jQuery, and Ajax.",
     "Assisted with system models, database updates, data validation, testing, documentation, and Git-based team collaboration.",
-    "Provided support for Windows, XAMPP, Apache, MySQL, phpMyAdmin, development-environment configuration, and basic troubleshooting.",
-    "Assisted with LAN connectivity, Ethernet cable checks, IP-address configuration, and internet-access support for office workstations.",
+    "Provided IT support involving Windows, XAMPP, Apache, MySQL, phpMyAdmin, development-environment configuration, and basic hardware and software troubleshooting.",
+    "Assisted with basic network setup and troubleshooting, including LAN connectivity, Ethernet cable checks, IP address configuration, and internet-access support for office workstations.",
+    "Supported the live deployment of the Biñan Access Card system during a three-day rice subsidy distribution. The system used QR-code scanning and validation to confirm beneficiary eligibility before releasing approximately 25,000 sacks of rice across 18 barangays, serving six barangays per day.",
+    "Assisted distribution personnel and users during on-site operations through QR-code verification, beneficiary validation, scanner support, and basic system troubleshooting.",
   ],
 };
 

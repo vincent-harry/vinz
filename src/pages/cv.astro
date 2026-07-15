@@ -21,7 +21,7 @@ import { credentials } from "../data/certificates";
   <section class="section section-tight">
     <div class="container cv-actions">
       <a class="btn btn-primary" href={profile.cv} target="_blank" rel="noopener noreferrer">View CV PDF</a>
-      <a class="btn btn-secondary" href={profile.cv} download>Download CV</a>
+      <a class="btn btn-secondary" href={profile.cv} target="_blank" rel="noopener noreferrer" download>Download CV</a>
     </div>
   </section>
 
@@ -34,11 +34,13 @@ import { credentials } from "../data/certificates";
           <span>{profile.location}</span>
           <a href={`mailto:${profile.email}`}>{profile.email}</a>
           <a href={`tel:${profile.phone.replace(/\s/g, "")}`}>{profile.phone}</a>
+          <a href={profile.linkedin} target="_blank" rel="noopener noreferrer">LinkedIn</a>
+          <a href={profile.github} target="_blank" rel="noopener noreferrer">GitHub</a>
         </div>
       </header>
 
       <section class="cv-section">
-        <h2>Professional Summary</h2>
+        <h2>Summary</h2>
         <p>{profile.summary} I am seeking an entry-level role in IT support, systems development, quality assurance, or web applications.</p>
       </section>
 
@@ -60,12 +62,13 @@ import { credentials } from "../data/certificates";
           <div><h3>PLANTERAID</h3><p>Web-Based Soil Monitoring and Recommendation System | Capstone Project</p></div>
           <p>2025 - 2026</p>
         </div>
-        <p>IoT-enabled web system for soil moisture, temperature, and humidity monitoring with recommendations and alert notifications.</p>
+        <p>IoT-enabled web system designed to monitor soil moisture, temperature, humidity, and location data and provide recommendations that support field decisions.</p>
+        <p><strong>Technology Stack:</strong> C#, Blazor .NET Core 8.0, HTML, CSS, JavaScript, SQL Server, SQL Server Management Studio, Arduino IDE, ESP32/Lolin32, soil-moisture sensor, SHT31 temperature and humidity sensor, and GPS integration.</p>
         <div class="cv-entry-heading">
           <div><h3>E-Commerce Ticketing System</h3><p>Web Developer</p></div>
-          <p>March 2024 - May 2024</p>
+          <p>Mar 2024 – May 2024</p>
         </div>
-        <p>Movie ticketing system built with ASP.NET and C# using an MS Access database for ticket booking and movie-distributor management.</p>
+        <p>Developed a movie ticketing system using ASP.NET (C#) with an MS Access (MDB) database, featuring ticket booking and movie distributor management.</p>
       </section>
 
       <section class="cv-section">
@@ -99,12 +102,8 @@ import { credentials } from "../data/certificates";
       <section class="cv-section cv-additional">
         <div><h2>Languages</h2><p>English | Filipino</p></div>
         <div>
-          <h2>Professional Links</h2>
-          <p>
-            <a href={profile.linkedin} target="_blank" rel="noopener noreferrer" aria-label="Open Vincent Trayvilla's LinkedIn profile in a new tab">LinkedIn</a>
-            <span aria-hidden="true"> | </span>
-            <a href={profile.github} target="_blank" rel="noopener noreferrer" aria-label="Open Vincent Trayvilla's GitHub profile in a new tab">GitHub</a>
-          </p>
+          <h2>References</h2>
+          <p>Available upon request</p>
         </div>
       </section>
     </div>

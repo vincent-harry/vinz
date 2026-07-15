@@ -1,10 +1,48 @@
-For each certificate, provide verified information using this format:
+Filename: career-readiness-toolkit.png
+Title: Career Readiness Toolkit
+Issuing organization: Mapua MCL Office for Strategic Partnerships and Global Engagement
+Date: April 21, 2026
+Category: Training
+Short description: Pathways to Employability program focused on career readiness and professional opportunities.
 
-Filename:
-Title:
-Issuing organization:
-Date:
-Category:
-Short description:
+Filename: ccna-introduction-to-networks-certificate.pdf
+Title: CCNA: Introduction to Networks
+Issuing organization: Cisco Networking Academy
+Date: November 15, 2022
+Category: Certificate
+Short description: Course completion covering network access, Ethernet, IP addressing, routing, connectivity, and network security practices.
 
-Add another block for each certificate. Do not include certificates issued to another person.
+Filename: generative-ai-certificate.pdf
+Title: Generative AI for Beginners
+Issuing organization: Great Learning Academy
+Date: November 2024
+Category: Certificate
+Short description: Online course introducing foundational generative artificial-intelligence concepts.
+
+Filename: cloud-computing-certificate.pdf
+Title: Introduction to Cloud Computing
+Issuing organization: USAID Asia Open RAN Academy
+Date: August 24, 2024
+Category: Certificate
+Short description: Certificate of participation for a webinar on cloud-computing concepts and services.
+
+Filename: edge-computing-certificate.pdf
+Title: Introduction to Edge Computing
+Issuing organization: USAID Asia Open RAN Academy
+Date: August 31, 2024
+Category: Certificate
+Short description: Certificate of participation for a webinar on edge-computing concepts and applications.
+
+Filename: wearos-certificate.pdf
+Title: WearOS: Emerging Technology for Internet and Learning of Everything
+Issuing organization: Mapua Malayan Colleges Laguna
+Date: November 23, 2024
+Category: Seminar
+Short description: Seminar on wearable platforms, emerging technology, and connected learning environments.
+
+Filename: ai-summit-certificate.pdf
+Title: AI Summit: Unlocking the Future
+Issuing organization: Mapua Malayan Colleges Laguna - CCIS and JPCS
+Date: June 6, 2024
+Category: Seminar
+Short description: Certificate of participation for a summit exploring computer-science opportunities in artificial intelligence.

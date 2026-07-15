@@ -19,6 +19,13 @@ export const practicum = {
   project: "Biñan Access Card Management Information System",
   role: "Web Systems Developer and IT Support Intern",
   period: "April 2026 - July 2026",
+  finalOutput: {
+    title: "I.T. Practicum Portfolio and Final Report",
+    description:
+      "The complete ring-bound submission documents my practicum engagement, assigned work, system output, supporting screenshots, synthesis, and conclusion.",
+    file: "/documents/practicum/vincent-trayvilla-binan-access-card-final-output.pdf",
+    details: "Final PDF | 38 pages | Biñan Access Card Management Information System",
+  },
   overview: [
     "I completed my practicum with the City Government of Biñan in a government-office environment as a Web Systems Developer and IT Support Intern. My assigned project was the Biñan Access Card Management Information System, a web-based application for organizing resident and household information and supporting public-service administration.",
     "The engagement involved model and database review, system-module checking, data validation, documentation, local testing, troubleshooting, basic networking, workstation support, and Git-based team collaboration. My main development assignment focused on model functions and database-related work.",

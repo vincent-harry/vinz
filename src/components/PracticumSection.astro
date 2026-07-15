@@ -8,10 +8,38 @@ import { practicum, practicumScreenshots } from "../data/practicum";
   <div class="container">
     <SectionHeading
       id="practicum-heading"
-      eyebrow="Practicum Final Report"
-      title="Biñan Access Card Management Information System"
-      intro="Final report for my practicum engagement with the City Government of Biñan."
+      eyebrow="Practicum Submission"
+      title="Final Output"
+      intro="Biñan Access Card Management Information System final report for my practicum engagement with the City Government of Biñan."
     />
+
+    <article class="final-output-document" aria-labelledby="final-output-document-heading">
+      <div class="final-output-copy">
+        <p class="document-number">Complete Ring-Bound Report</p>
+        <h3 id="final-output-document-heading">{practicum.finalOutput.title}</h3>
+        <p>{practicum.finalOutput.description}</p>
+        <p class="final-output-meta">{practicum.finalOutput.details}</p>
+      </div>
+      <div class="final-output-actions">
+        <a
+          class="btn btn-primary"
+          href={practicum.finalOutput.file}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          View Full Report
+        </a>
+        <a
+          class="btn btn-dark"
+          href={practicum.finalOutput.file}
+          target="_blank"
+          rel="noopener noreferrer"
+          download
+        >
+          Download PDF
+        </a>
+      </div>
+    </article>
 
     <dl class="report-facts">
       <div><dt>Host Organization</dt><dd>{practicum.host}</dd></div>

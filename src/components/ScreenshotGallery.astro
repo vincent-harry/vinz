@@ -8,9 +8,10 @@ interface Image {
 interface Props {
   images: Image[];
   label: string;
+  group: string;
 }
 
-const { images, label } = Astro.props;
+const { images, label, group } = Astro.props;
 ---
 
 <div class="screenshot-grid" aria-label={label}>
@@ -21,6 +22,7 @@ const { images, label } = Astro.props;
         type="button"
         data-lightbox={image.src}
         data-lightbox-title={image.caption}
+        data-lightbox-group={group}
         aria-label={`View ${image.caption} full size`}
       >
         <img src={image.src} alt={image.alt} loading="lazy" decoding="async" />

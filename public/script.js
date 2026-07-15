@@ -9,9 +9,14 @@ const lightboxPanel = lightbox?.querySelector(".lightbox-panel");
 const lightboxImage = document.querySelector("#lightbox-image");
 const lightboxTitle = document.querySelector("#lightbox-title");
 const lightboxClose = document.querySelector(".lightbox-close");
+const lightboxControls = document.querySelector(".lightbox-controls");
+const lightboxPrevious = document.querySelector(".lightbox-prev");
+const lightboxNext = document.querySelector(".lightbox-next");
 const galleryItems = Array.from(document.querySelectorAll("[data-lightbox]"));
 const lightboxOpeners = Array.from(document.querySelectorAll("[data-lightbox-open]"));
 
+let activeGalleryItems = [];
+let activeGalleryIndex = -1;
 let lastFocusedElement = null;
 
 document.querySelectorAll("[data-current-year]").forEach((element) => {
@@ -153,10 +158,10 @@ window.addEventListener("hashchange", () => {
 });
 
 function showGalleryItem(index) {
-  if (!lightbox || !lightboxImage || !lightboxTitle || galleryItems.length === 0) return;
+  if (!lightbox || !lightboxImage || !lightboxTitle || activeGalleryItems.length === 0) return;
 
-  const item = galleryItems[index];
-  if (!item) return;
+  activeGalleryIndex = (index + activeGalleryItems.length) % activeGalleryItems.length;
+  const item = activeGalleryItems[activeGalleryIndex];
   const source = item.dataset.lightbox || "";
   const title = item.dataset.lightboxTitle || "Portfolio screenshot";
 
@@ -165,10 +170,22 @@ function showGalleryItem(index) {
   lightboxTitle.textContent = title;
 }
 
-function openLightbox(index) {
-  if (!lightbox) return;
+function openLightbox(item) {
+  if (!lightbox || !item) return;
+  const group = item.dataset.lightboxGroup;
+
+  activeGalleryItems = group
+    ? galleryItems.filter((candidate) => candidate.dataset.lightboxGroup === group)
+    : [item];
+  activeGalleryIndex = activeGalleryItems.indexOf(item);
+
+  const hasSectionNavigation = Boolean(group) && activeGalleryItems.length > 1;
+  if (lightboxControls) lightboxControls.hidden = !hasSectionNavigation;
+  if (lightboxPrevious) lightboxPrevious.disabled = !hasSectionNavigation;
+  if (lightboxNext) lightboxNext.disabled = !hasSectionNavigation;
+
   lastFocusedElement = document.activeElement;
-  showGalleryItem(index);
+  showGalleryItem(activeGalleryIndex);
   lightbox.classList.add("is-open");
   lightbox.setAttribute("aria-hidden", "false");
   lightboxClose?.focus();
@@ -179,22 +196,29 @@ function closeLightbox() {
   lightbox.classList.remove("is-open");
   lightbox.setAttribute("aria-hidden", "true");
   lightboxImage.removeAttribute("src");
+  activeGalleryItems = [];
+  activeGalleryIndex = -1;
+  if (lightboxControls) lightboxControls.hidden = true;
+  if (lightboxPrevious) lightboxPrevious.disabled = true;
+  if (lightboxNext) lightboxNext.disabled = true;
   if (lastFocusedElement instanceof HTMLElement) lastFocusedElement.focus();
 }
 
-galleryItems.forEach((item, index) => {
-  item.addEventListener("click", () => openLightbox(index));
+galleryItems.forEach((item) => {
+  item.addEventListener("click", () => openLightbox(item));
 });
 
 lightboxOpeners.forEach((opener) => {
   opener.addEventListener("click", () => {
     const source = opener.dataset.lightboxOpen || "";
-    const index = galleryItems.findIndex((item) => item.dataset.lightbox === source);
-    if (index >= 0) openLightbox(index);
+    const item = galleryItems.find((candidate) => candidate.dataset.lightbox === source);
+    if (item) openLightbox(item);
   });
 });
 
 lightboxClose?.addEventListener("click", closeLightbox);
+lightboxPrevious?.addEventListener("click", () => showGalleryItem(activeGalleryIndex - 1));
+lightboxNext?.addEventListener("click", () => showGalleryItem(activeGalleryIndex + 1));
 
 document.addEventListener("keydown", (event) => {
   if (event.key === "Escape" && navLinks?.classList.contains("is-open")) {
@@ -203,6 +227,18 @@ document.addEventListener("keydown", (event) => {
   }
 
   if (!lightbox?.classList.contains("is-open")) return;
+
+  const canNavigate = !lightboxControls?.hidden && activeGalleryItems.length > 1;
+  if (canNavigate && event.key === "ArrowLeft") {
+    event.preventDefault();
+    showGalleryItem(activeGalleryIndex - 1);
+    return;
+  }
+  if (canNavigate && event.key === "ArrowRight") {
+    event.preventDefault();
+    showGalleryItem(activeGalleryIndex + 1);
+    return;
+  }
 
   if (event.key === "Tab" && lightboxPanel) {
     const controls = Array.from(

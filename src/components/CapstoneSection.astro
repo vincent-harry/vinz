@@ -46,7 +46,11 @@ const testingImages = capstoneImages.filter((image) => image.group === "Testing"
         <h3 id="capstone-gui-heading">System Interface</h3>
         <p>PlanterAid dashboard, monitoring, and notification interfaces.</p>
       </div>
-      <ScreenshotGallery images={guiImages} label="PlanterAid GUI screenshots" />
+      <ScreenshotGallery
+        images={guiImages}
+        label="PlanterAid GUI screenshots"
+        group="capstone"
+      />
     </section>
 
     <section class="portfolio-subsection technology-layout" aria-label="PlanterAid technologies">
@@ -70,7 +74,11 @@ const testingImages = capstoneImages.filter((image) => image.group === "Testing"
         <p class="eyebrow">Prototype Hardware</p>
         <h3 id="capstone-hardware-heading">Sensor Nodes and Field Placement</h3>
       </div>
-      <ScreenshotGallery images={hardwareImages} label="PlanterAid hardware images" />
+      <ScreenshotGallery
+        images={hardwareImages}
+        label="PlanterAid hardware images"
+        group="capstone"
+      />
     </section>
 
     <section class="portfolio-subsection" aria-labelledby="capstone-testing-heading">
@@ -79,7 +87,11 @@ const testingImages = capstoneImages.filter((image) => image.group === "Testing"
         <h3 id="capstone-testing-heading">Validation and Continuous Operation</h3>
         <p>{capstone.testing}</p>
       </div>
-      <ScreenshotGallery images={testingImages} label="PlanterAid testing images" />
+      <ScreenshotGallery
+        images={testingImages}
+        label="PlanterAid testing images"
+        group="capstone"
+      />
       <div class="report-content reading-width capstone-closing">
         <section>
           <h3>Methodology</h3>

@@ -40,6 +40,10 @@ const { project, index } = Astro.props;
 
   <section class="project-gallery">
     <h4>Screenshots of the GUI</h4>
-    <ScreenshotGallery images={project.images} label={`${project.title} GUI screenshots`} />
+    <ScreenshotGallery
+      images={project.images}
+      label={`${project.title} GUI screenshots`}
+      group="software-developed"
+    />
   </section>
 </article>

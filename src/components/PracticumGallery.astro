@@ -21,6 +21,7 @@ const { images } = Astro.props;
           type="button"
           data-lightbox={image.src}
           data-lightbox-title={`Figure ${image.number}: ${image.title}`}
+          data-lightbox-group="binan-access-card"
           aria-label={`View Figure ${image.number}, ${image.title}, full size`}
         >
           <img

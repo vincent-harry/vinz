@@ -20,7 +20,7 @@ import { credentials } from "../data/certificates";
         View CV PDF
       </a>
       <a
-        class="btn btn-dark"
+        class="btn btn-accent"
         href={profile.cv}
         target="_blank"
         rel="noopener noreferrer"
@@ -137,9 +137,24 @@ import { credentials } from "../data/certificates";
         <div>
           <h3>Professional Links</h3>
           <div class="professional-links">
-            <a href={profile.linkedin} target="_blank" rel="noopener noreferrer">LinkedIn</a>
-            <a href={profile.github} target="_blank" rel="noopener noreferrer">GitHub</a>
-            <a href={profile.portfolio} target="_blank" rel="noopener noreferrer">Portfolio</a>
+            <a
+              href={profile.linkedin}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Open LinkedIn profile in a new tab"
+            >LinkedIn</a>
+            <a
+              href={profile.github}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Open GitHub profile in a new tab"
+            >GitHub</a>
+            <a
+              href={profile.portfolio}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Open portfolio website in a new tab"
+            >Portfolio</a>
           </div>
         </div>
       </section>

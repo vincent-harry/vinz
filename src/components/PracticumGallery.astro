@@ -36,6 +36,14 @@ const { images } = Astro.props;
         <figcaption>
           <p>{image.caption}</p>
           {image.relatedWork && <p class="related-work"><strong>Related task:</strong> {image.relatedWork}</p>}
+          <button
+            class="btn btn-secondary figure-view-button"
+            type="button"
+            data-lightbox-open={image.src}
+            aria-label={`View Figure ${image.number}, ${image.title}, full size`}
+          >
+            View Full Size
+          </button>
         </figcaption>
       </figure>
     ))

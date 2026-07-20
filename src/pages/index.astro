@@ -54,11 +54,11 @@ const seminarItems = credentials.filter(
           {profile.school} | {profile.graduation}
         </p>
         <div class="button-row">
-          <a class="btn btn-primary" href="#cv">View Curriculum Vitae</a>
-          <a class="btn btn-secondary" href="#projects">View Projects</a>
-          <a class="btn btn-dark" href="#practicum">View Final Output</a>
+          <a class="btn btn-light" href="#cv">View Curriculum Vitae</a>
+          <a class="btn btn-outline-light" href="#projects">View Projects</a>
+          <a class="btn btn-accent" href="#practicum">View Practicum Final Report</a>
           <a
-            class="btn btn-secondary"
+            class="btn btn-outline-light"
             href={profile.cv}
             target="_blank"
             rel="noopener noreferrer"
@@ -188,13 +188,28 @@ const seminarItems = credentials.filter(
         <a href={`tel:${profile.phone.replace(/\s/g, "")}`}>
           <span>Mobile</span><strong>{profile.phone}</strong>
         </a>
-        <a href={profile.linkedin} target="_blank" rel="noopener noreferrer">
+        <a
+          href={profile.linkedin}
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Open Vincent Trayvilla's LinkedIn profile in a new tab"
+        >
           <span>LinkedIn</span><strong>vincent-harry-trayvilla-160644331</strong>
         </a>
-        <a href={profile.github} target="_blank" rel="noopener noreferrer">
+        <a
+          href={profile.github}
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Open Vincent Trayvilla's GitHub profile in a new tab"
+        >
           <span>GitHub</span><strong>vincent-harry</strong>
         </a>
-        <a href={profile.portfolio} target="_blank" rel="noopener noreferrer">
+        <a
+          href={profile.portfolio}
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Open Vincent Trayvilla's portfolio in a new tab"
+        >
           <span>Portfolio</span><strong>vhhtrayvilla-portfolio.vercel.app</strong>
         </a>
         <div><span>Location</span><strong>{profile.location}</strong></div>

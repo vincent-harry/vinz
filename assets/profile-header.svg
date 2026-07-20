@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="240" viewBox="0 0 1200 240" role="img" aria-labelledby="title description">
+  <title id="title">Vincent Harry H. Trayvilla</title>
+  <desc id="description">Professional header for a web systems developer and IT support profile</desc>
+  <rect width="1200" height="240" rx="18" fill="#2c5530"/>
+  <rect x="0" y="0" width="14" height="240" rx="7" fill="#99621e"/>
+  <path d="M60 55H760" stroke="#739e82" stroke-width="3"/>
+  <path d="M60 184H700" stroke="#739e82" stroke-width="3"/>
+  <circle cx="1035" cy="54" r="112" fill="#739e82" opacity="0.18"/>
+  <circle cx="1110" cy="190" r="86" fill="#99621e" opacity="0.55"/>
+  <circle cx="972" cy="174" r="34" fill="#d38b5d" opacity="0.9"/>
+  <path d="M895 68L1110 68" stroke="#f3ffb6" stroke-width="5" stroke-linecap="round" opacity="0.75"/>
+  <path d="M895 90L1060 90" stroke="#d38b5d" stroke-width="5" stroke-linecap="round"/>
+  <text x="60" y="118" fill="#f3ffb6" font-family="Arial, Helvetica, sans-serif" font-size="48" font-weight="700">Vincent Harry H. Trayvilla</text>
+  <text x="62" y="161" fill="#f3ffb6" font-family="Arial, Helvetica, sans-serif" font-size="25" letter-spacing="1">Web Systems Developer | IT Support</text>
+</svg>

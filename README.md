@@ -19,9 +19,9 @@
 </p>
 
 <p align="center">
-  <a href="https://vhhtrayvilla-portfolio.vercel.app/"><img src="https://img.shields.io/badge/Portfolio-99621e?style=flat-square&amp;logo=vercel&amp;logoColor=f3ffb6" alt="View Vincent's portfolio" /></a>
-  <a href="https://linkedin.com/in/vincent-harry-trayvilla"><img src="https://img.shields.io/badge/LinkedIn-2c5530?style=flat-square&amp;logo=linkedin&amp;logoColor=f3ffb6" alt="Connect with Vincent on LinkedIn" /></a>
-  <a href="mailto:vince.trayvilla@gmail.com"><img src="https://img.shields.io/badge/Email-739e82?style=flat-square&amp;logo=gmail&amp;logoColor=ffffff" alt="Email Vincent" /></a>
+  <a href="https://vhhtrayvilla-portfolio.vercel.app/"><img src="https://img.shields.io/badge/Portfolio-000000?style=flat-square&amp;logo=vercel&amp;logoColor=bfd7ea" alt="View Vincent's portfolio" /></a>
+  <a href="https://linkedin.com/in/vincent-harry-trayvilla"><img src="https://img.shields.io/badge/LinkedIn-839788?style=flat-square&amp;logo=linkedin&amp;logoColor=000000" alt="Connect with Vincent on LinkedIn" /></a>
+  <a href="mailto:vince.trayvilla@gmail.com"><img src="https://img.shields.io/badge/Email-bfd7ea?style=flat-square&amp;logo=gmail&amp;logoColor=000000" alt="Email Vincent" /></a>
 </p>
 
 ## About Me

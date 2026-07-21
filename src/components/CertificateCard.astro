@@ -29,7 +29,7 @@ const { credential } = Astro.props;
       <div class="card-actions">
         {credential.image ? (
           <button
-            class="btn btn-secondary"
+            class="btn btn-pale"
             type="button"
             data-lightbox-open={credential.image}
             aria-label={`View ${credential.title} in the certificate modal`}
@@ -38,7 +38,7 @@ const { credential } = Astro.props;
           </button>
         ) : (
           <a
-            class="btn btn-secondary"
+            class="btn btn-pale"
             href={credential.file}
             target="_blank"
             rel="noopener noreferrer"
@@ -48,7 +48,7 @@ const { credential } = Astro.props;
           </a>
         )}
         <a
-          class="btn btn-accent"
+          class="btn btn-warm"
           href={credential.file}
           target="_blank"
           rel="noopener noreferrer"

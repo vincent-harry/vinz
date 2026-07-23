@@ -1229,6 +1229,8 @@ p {
 }
 
 .practicum-figure {
+  display: flex;
+  flex-direction: column;
   overflow: hidden;
   margin: 0;
   background: var(--color-surface);
@@ -1280,6 +1282,10 @@ p {
 }
 
 .practicum-figure figcaption {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
   min-height: 122px;
   padding: 16px 18px;
   color: var(--color-text-secondary);
@@ -1288,11 +1294,11 @@ p {
 }
 
 .practicum-figure figcaption p:last-of-type {
-  margin-bottom: 0;
+  margin-bottom: 14px;
 }
 
 .figure-view-button {
-  margin-top: 14px;
+  margin-top: auto;
 }
 
 .related-work {

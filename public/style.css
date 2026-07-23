@@ -624,16 +624,6 @@ p {
   font-weight: 650;
 }
 
-.project-meta,
-.credential-type {
-  display: inline-flex;
-  padding: 4px 8px;
-  color: var(--color-black);
-  background: var(--color-khaki-beige);
-  border-radius: 4px;
-  letter-spacing: 0.07em;
-}
-
 .tag-list.compact li {
   padding: 6px 9px;
 }

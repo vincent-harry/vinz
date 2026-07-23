@@ -11,6 +11,8 @@ const { document } = Astro.props;
 <article class="document-card">
   <p class="document-number">Appendix {document.number}</p>
   <h3>{document.title}</h3>
+  {document.subtitle && <p class="document-subtitle">{document.subtitle}</p>}
+  {document.status && <p class="document-status">{document.status}</p>}
   <p>{document.description}</p>
 
   {
@@ -21,9 +23,9 @@ const { document } = Astro.props;
           href={document.file}
           target="_blank"
           rel="noopener noreferrer"
-          aria-label={`View Appendix ${document.number}: ${document.title} in a new tab`}
+          aria-label={`${document.viewLabel ?? "View PDF"} for Appendix ${document.number}: ${document.title} in a new tab`}
         >
-          View PDF
+          {document.viewLabel ?? "View PDF"}
         </a>
         <a
           class="btn btn-pale"
@@ -31,9 +33,9 @@ const { document } = Astro.props;
           target="_blank"
           rel="noopener noreferrer"
           download
-          aria-label={`Download Appendix ${document.number}: ${document.title}`}
+          aria-label={`${document.downloadLabel ?? "Download"} for Appendix ${document.number}: ${document.title}`}
         >
-          Download
+          {document.downloadLabel ?? "Download"}
         </a>
       </div>
     ) : (

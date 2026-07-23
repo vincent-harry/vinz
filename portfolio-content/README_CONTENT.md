@@ -5,12 +5,12 @@ This folder is the authoring workspace for materials that will be reviewed and c
 ## Replacing Core Files
 
 - Profile picture: replace `profile/profile-picture.jpg` with a clear JPG portrait.
-- Final CV: update `cv/Vincent-Trayvilla-Final-CV.pdf` when a newer verified version is available.
+- Official CV: `public/documents/Vincent_Trayvilla_Updated_CV.pdf`.
 - Practicum appendices: replace the matching numbered PDF in `practicum/appendices/`.
-- Complete Daily Journal: replace `practicum/appendices/7-complete-daily-journal.pdf`.
+- Complete Practicum Weekly Journal: `public/documents/Practicum_Weekly_Journal_April21_July24_2026.pdf`.
 - Submission files should be stored locally; the public website does not depend on external cloud-storage links.
 
-The competency-based CV, endorsement letter, practicum acceptance, liability waiver, training plan, and complete daily journal are verified local files. Generic certificate/seminar files and other zero-byte replacement slots must not be published or linked.
+The finalized competency-based CV and compiled weekly journal each have one website-ready copy under `public/documents/`. The endorsement letter, practicum acceptance, liability waiver, and training plan remain verified local appendix files. Generic certificate/seminar files and other zero-byte replacement slots must not be published or linked.
 
 ## Adding Materials
 

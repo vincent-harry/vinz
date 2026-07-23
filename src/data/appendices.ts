@@ -1,8 +1,14 @@
+import { publicPath } from "../utils/publicPath";
+
 export type AppendixDocument = {
   number: string;
   title: string;
+  subtitle?: string;
   description: string;
   file?: string;
+  status?: "Available";
+  viewLabel?: string;
+  downloadLabel?: string;
 };
 
 export const appendices: AppendixDocument[] = [
@@ -10,8 +16,11 @@ export const appendices: AppendixDocument[] = [
     number: "1.0",
     title: "Competency-Based CV",
     description:
-      "One-page curriculum vitae covering professional background, experience, academic projects, education, certifications, and technical skills.",
-    file: "/documents/practicum/appendices/1-competency-based-cv.pdf",
+      "Updated professional CV containing my education, practicum experience, technical skills, academic projects, certifications, and contact details.",
+    file: publicPath("documents/Vincent_Trayvilla_Updated_CV.pdf"),
+    status: "Available",
+    viewLabel: "View Updated CV",
+    downloadLabel: "Download CV",
   },
   {
     number: "2.0",
@@ -43,9 +52,13 @@ export const appendices: AppendixDocument[] = [
   },
   {
     number: "7.0",
-    title: "Complete Daily Journal",
+    title: "Complete Practicum Weekly Journal",
+    subtitle: "April 21 \u2013 July 24, 2026",
     description:
-      "Final complete practicum journal covering April 21 through July 10, 2026.",
-    file: "/documents/practicum/appendices/7-complete-daily-journal.pdf",
+      "A 14-week compilation of practicum activities under Software Development, Technical Documentation, and IT Operations at the City Government of Bi\u00f1an ICTO.",
+    file: publicPath("documents/Practicum_Weekly_Journal_April21_July24_2026.pdf"),
+    status: "Available",
+    viewLabel: "View Weekly Journal",
+    downloadLabel: "Download Journal",
   },
 ];

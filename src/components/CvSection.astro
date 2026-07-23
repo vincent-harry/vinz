@@ -16,8 +16,14 @@ import { credentials } from "../data/certificates";
     />
 
     <div class="cv-actions">
-      <a class="btn btn-primary" href={profile.cv} target="_blank" rel="noopener noreferrer">
-        View CV PDF
+      <a
+        class="btn btn-primary"
+        href={profile.cv}
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="View updated CV PDF in a new tab"
+      >
+        View Updated CV
       </a>
       <a
         class="btn btn-pale"
@@ -25,6 +31,7 @@ import { credentials } from "../data/certificates";
         target="_blank"
         rel="noopener noreferrer"
         download
+        aria-label="Download updated CV PDF"
       >
         Download CV
       </a>

@@ -1,3 +1,5 @@
+import { publicPath } from "../utils/publicPath";
+
 export const profile = {
   name: "Vincent Harry H. Trayvilla",
   title: "Web Systems Developer | IT Support",
@@ -10,7 +12,7 @@ export const profile = {
   linkedin: "https://www.linkedin.com/in/vincent-harry-trayvilla-160644331/",
   github: "https://github.com/vincent-harry",
   portfolio: "https://vhhtrayvilla-portfolio.vercel.app/",
-  cv: "/documents/cv/vincent-trayvilla-cv.pdf",
+  cv: publicPath("documents/Vincent_Trayvilla_Updated_CV.pdf"),
   summary:
     "Graduating Bachelor of Science in Information Technology student with hands-on practicum experience as a Web Systems Developer and IT Support Intern in a local government environment. Skilled in web-based information systems, database work, system testing, documentation, user support, basic networking, and software and hardware troubleshooting.",
 };

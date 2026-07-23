@@ -6,7 +6,6 @@ export type AppendixDocument = {
   subtitle?: string;
   description: string;
   file?: string;
-  status?: "Available";
   viewLabel?: string;
   downloadLabel?: string;
 };
@@ -18,8 +17,7 @@ export const appendices: AppendixDocument[] = [
     description:
       "Updated professional CV containing my education, practicum experience, technical skills, academic projects, certifications, and contact details.",
     file: publicPath("documents/Vincent_Trayvilla_Updated_CV.pdf"),
-    status: "Available",
-    viewLabel: "View Updated CV",
+    viewLabel: "View CV",
     downloadLabel: "Download CV",
   },
   {
@@ -51,14 +49,13 @@ export const appendices: AppendixDocument[] = [
     file: "/documents/practicum/appendices/5-training-plan.pdf",
   },
   {
-    number: "7.0",
+    number: "6.0",
     title: "Complete Practicum Weekly Journal",
     subtitle: "April 21 \u2013 July 24, 2026",
     description:
       "A 14-week compilation of practicum activities under Software Development, Technical Documentation, and IT Operations at the City Government of Bi\u00f1an ICTO.",
     file: publicPath("documents/Practicum_Weekly_Journal_April21_July24_2026.pdf"),
-    status: "Available",
-    viewLabel: "View Weekly Journal",
+    viewLabel: "View Journal",
     downloadLabel: "Download Journal",
   },
 ];

@@ -1335,7 +1335,7 @@ p {
   font-size: 1.12rem;
 }
 
-.document-card > p:not(.document-number):not(.document-subtitle):not(.document-status):not(.document-unavailable) {
+.document-card > p:not(.document-number):not(.document-subtitle):not(.document-unavailable) {
   color: var(--color-text-secondary);
 }
 
@@ -1343,18 +1343,6 @@ p {
   margin: -4px 0 12px;
   color: var(--color-accent-text);
   font-weight: 700;
-}
-
-.document-status {
-  align-self: flex-start;
-  padding: 4px 9px;
-  margin: 0 0 12px;
-  color: var(--color-black);
-  background: var(--color-pale-sky);
-  border: 1px solid var(--color-muted-teal);
-  border-radius: 999px;
-  font-size: 0.76rem;
-  font-weight: 800;
 }
 
 .document-card .card-actions {

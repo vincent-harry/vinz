@@ -12,7 +12,6 @@ const { document } = Astro.props;
   <p class="document-number">Appendix {document.number}</p>
   <h3>{document.title}</h3>
   {document.subtitle && <p class="document-subtitle">{document.subtitle}</p>}
-  {document.status && <p class="document-status">{document.status}</p>}
   <p>{document.description}</p>
 
   {

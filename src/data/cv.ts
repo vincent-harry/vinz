@@ -16,8 +16,8 @@ export const cvData = {
       href: "mailto:vince.trayvilla@gmail.com",
     },
     linkedin: {
-      display: "linkedin.com/in/vincent-harry-trayvilla",
-      href: "https://www.linkedin.com/in/vincent-harry-trayvilla",
+      display: "linkedin.com/in/vincent-harry-trayvilla-160644331",
+      href: "https://www.linkedin.com/in/vincent-harry-trayvilla-160644331/",
     },
     github: {
       display: "github.com/vincent-harry",

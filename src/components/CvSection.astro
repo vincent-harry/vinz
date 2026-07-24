@@ -1,9 +1,8 @@
 ---
 import SectionHeading from "./SectionHeading.astro";
-import SkillGroup from "./SkillGroup.astro";
-import { profile, experience, education } from "../data/profile";
-import { skillGroups } from "../data/skills";
-import { credentials } from "../data/certificates";
+import { cvData, cvPath } from "../data/cv";
+
+const { personalInformation } = cvData;
 ---
 
 <section class="section section-muted" id="cv" aria-labelledby="cv-heading">
@@ -18,152 +17,194 @@ import { credentials } from "../data/certificates";
     <div class="cv-actions">
       <a
         class="btn btn-primary"
-        href={profile.cv}
+        href={cvPath}
         target="_blank"
         rel="noopener noreferrer"
-        aria-label="View CV PDF in a new tab"
+        aria-label="View Vincent Harry Trayvilla's professional CV PDF in a new tab"
       >
         View CV
       </a>
       <a
         class="btn btn-pale"
-        href={profile.cv}
+        href={cvPath}
         target="_blank"
         rel="noopener noreferrer"
         download
-        aria-label="Download updated CV PDF"
+        aria-label="Download Vincent Harry Trayvilla's professional CV PDF"
       >
         Download CV
       </a>
     </div>
 
-    <article class="cv-document">
-      <div class="cv-nameplate">
-        <p class="cv-person-name">{profile.name}</p>
-        <p>{profile.title}</p>
-        <div class="cv-contact-line">
-          <span>{profile.location}</span>
-          <a href={`mailto:${profile.email}`}>{profile.email}</a>
-          <a href={`tel:${profile.phone.replace(/\s/g, "")}`}>{profile.phone}</a>
-        </div>
-      </div>
+    <article class="cv-document" aria-label="Responsive HTML curriculum vitae">
+      <header class="cv-nameplate">
+        <p class="cv-person-name">{personalInformation.name}</p>
+        <p>{personalInformation.title}</p>
+        <address class="cv-contact-block" aria-label="Contact information">
+          <dl class="cv-contact-list">
+            <div>
+              <dt>Location</dt>
+              <dd>{personalInformation.location}</dd>
+            </div>
+            <div>
+              <dt>Phone</dt>
+              <dd><a href={personalInformation.phone.href}>{personalInformation.phone.display}</a></dd>
+            </div>
+            <div>
+              <dt>Email</dt>
+              <dd><a href={personalInformation.email.href}>{personalInformation.email.display}</a></dd>
+            </div>
+            <div>
+              <dt>LinkedIn</dt>
+              <dd>
+                <a
+                  href={personalInformation.linkedin.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  {personalInformation.linkedin.display}
+                </a>
+              </dd>
+            </div>
+            <div>
+              <dt>GitHub</dt>
+              <dd>
+                <a
+                  href={personalInformation.github.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  {personalInformation.github.display}
+                </a>
+              </dd>
+            </div>
+            <div>
+              <dt>Portfolio</dt>
+              <dd>
+                <a
+                  href={personalInformation.portfolio.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  {personalInformation.portfolio.display}
+                </a>
+              </dd>
+            </div>
+          </dl>
+        </address>
+      </header>
 
       <section class="cv-section">
-        <h3>Summary</h3>
-        <p>
-          {profile.summary} I am seeking an entry-level role in IT support, systems development,
-          quality assurance, or web applications.
-        </p>
+        <h3>Professional Summary</h3>
+        <p>{cvData.professionalSummary}</p>
       </section>
 
       <section class="cv-section">
         <h3>Work Experience</h3>
-        <div class="cv-entry-heading">
-          <div>
-            <h4>{experience.organization}</h4>
-            <p>{experience.location} | {experience.role}</p>
-          </div>
-          <p>{experience.period}</p>
-        </div>
-        <p><strong>Assigned Project:</strong> {experience.project}</p>
-        <ul class="plain-list">
-          {experience.highlights.map((highlight) => <li>{highlight}</li>)}
-        </ul>
-      </section>
-
-      <section class="cv-section">
-        <h3>Academic Projects</h3>
-        <div class="cv-entry-heading">
-          <div>
-            <h4>PLANTERAID</h4>
-            <p>Web-Based Soil Monitoring and Recommendation System | Capstone Project</p>
-          </div>
-          <p>Aug 2025 - Jul 2026</p>
-        </div>
-        <p>
-          An IoT-enabled web system designed to monitor soil moisture, temperature, humidity,
-          and location data and provide recommendations that support field decisions.
-        </p>
-        <p>
-          <strong>Technology Stack:</strong> C#, Blazor .NET Core 8.0, HTML, CSS, JavaScript,
-          SQL Server, SQL Server Management Studio, Arduino IDE, ESP32/Lolin32,
-          soil-moisture sensor, SHT31 temperature and humidity sensor, and GPS integration.
-        </p>
-
-        <div class="cv-entry-heading">
-          <div>
-            <h4>E-Commerce Ticketing System</h4>
-            <p>Web Developer</p>
-          </div>
-          <p>Mar 2024 - May 2024</p>
-        </div>
-        <p>
-          Developed a movie ticketing system using ASP.NET (C#) with an MS Access (MDB)
-          database, featuring ticket booking and movie distributor management.
-        </p>
-      </section>
-
-      <section class="cv-section">
-        <h3>Education</h3>
         {
-          education.map((entry) => (
-            <div class="education-entry">
+          cvData.workExperience.map((entry) => (
+            <article class="cv-entry">
               <div class="cv-entry-heading">
                 <div>
-                  <h4>{entry.school}</h4>
-                  <p>{entry.location}</p>
+                  <h4>{entry.organization}</h4>
+                  <p>{entry.location} | {entry.position}</p>
                 </div>
-                <p>{entry.period}</p>
+                <p>{entry.dates}</p>
               </div>
-              <p><strong>{entry.program}</strong></p>
-              <p>{entry.details}</p>
-            </div>
+              <p><strong>Assigned Project:</strong> {entry.assignedProject}</p>
+              <ul class="plain-list">
+                {entry.responsibilities.map((responsibility) => <li>{responsibility}</li>)}
+              </ul>
+            </article>
           ))
         }
       </section>
 
       <section class="cv-section">
+        <h3>Projects</h3>
+        {
+          cvData.projects.map((project) => (
+            <article class="cv-entry">
+              <div class="cv-entry-heading">
+                <div>
+                  <h4>{project.title}</h4>
+                  <p>{project.role}</p>
+                </div>
+                <p>{project.dates}</p>
+              </div>
+              <p><strong>Software Used:</strong> {project.softwareUsed}</p>
+              <p>{project.description}</p>
+            </article>
+          ))
+        }
+      </section>
+
+      <section class="cv-section">
+        <h3>Education</h3>
+        {
+          cvData.education.map((entry) => (
+            <article class="cv-entry education-entry">
+              <div class="cv-entry-heading">
+                <div>
+                  <h4>{entry.school}</h4>
+                  <p>{entry.location}</p>
+                </div>
+                <p>{entry.graduation}</p>
+              </div>
+              <p><strong>{entry.program}</strong></p>
+              <p><strong>Academic Achievements:</strong> {entry.academicAchievements}</p>
+              <p><strong>Relevant Coursework:</strong></p>
+              <ul class="plain-list cv-coursework-list">
+                {entry.relevantCoursework.map((course) => <li>{course}</li>)}
+              </ul>
+            </article>
+          ))
+        }
+      </section>
+
+      <section class="cv-section">
+        <h3>Technical Skills</h3>
+        <div class="cv-technical-grid">
+          {
+            cvData.technicalSkills.map((group) => (
+              <div class="cv-skill-group">
+                <h4>{group.category}</h4>
+                <ul class="tag-list compact">
+                  {group.skills.map((skill) => <li>{skill}</li>)}
+                </ul>
+              </div>
+            ))
+          }
+        </div>
+      </section>
+
+      <section class="cv-section">
         <h3>Certifications</h3>
-        <ul class="two-column-list">
-          {credentials.map((item) => <li>{item.title} | {item.date}</li>)}
+        <ul class="two-column-list cv-certification-list">
+          {
+            cvData.certifications.map((certification) => (
+              <li>
+                <span>{certification.title}</span>
+                <strong>{certification.date}</strong>
+              </li>
+            ))
+          }
         </ul>
       </section>
 
       <section class="cv-section">
-        <h3>Skills and Expertise</h3>
-        <div class="skills-grid cv-skills">
-          {skillGroups.map((group) => <SkillGroup title={group.title} skills={group.skills} />)}
-        </div>
-      </section>
-
-      <section class="cv-section cv-additional">
-        <div>
-          <h3>Languages</h3>
-          <p>English | Filipino</p>
-        </div>
-        <div>
-          <h3>Professional Links</h3>
-          <div class="professional-links">
-            <a
-              href={profile.linkedin}
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Open LinkedIn profile in a new tab"
-            >LinkedIn</a>
-            <a
-              href={profile.github}
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Open GitHub profile in a new tab"
-            >GitHub</a>
-            <a
-              href={profile.portfolio}
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Open portfolio website in a new tab"
-            >Portfolio</a>
-          </div>
-        </div>
+        <h3>Student Organizations</h3>
+        <ul class="cv-organization-list">
+          {
+            cvData.organizations.map((organization) => (
+              <li>
+                <strong>{organization.name}</strong>
+                <span>{organization.school}</span>
+                <span>{organization.role}</span>
+              </li>
+            ))
+          }
+        </ul>
       </section>
     </article>
   </div>

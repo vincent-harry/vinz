@@ -5,7 +5,7 @@ This folder is the authoring workspace for materials that will be reviewed and c
 ## Replacing Core Files
 
 - Profile picture: replace `profile/profile-picture.jpg` with a clear JPG portrait.
-- Official CV: `public/documents/Vincent_Trayvilla_Updated_CV.pdf`.
+- Official CV: `public/documents/Vincent_Harry_Trayvilla_Professional_CV.pdf`.
 - Practicum appendices: replace the matching numbered PDF in `practicum/appendices/`.
 - Complete Practicum Weekly Journal: `public/documents/Practicum_Weekly_Journal_April21_July24_2026.pdf`.
 - Submission files should be stored locally; the public website does not depend on external cloud-storage links.

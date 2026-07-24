@@ -1,4 +1,5 @@
 import { publicPath } from "../utils/publicPath";
+import { cvPath } from "./cv";
 
 export type AppendixDocument = {
   number: string;
@@ -16,7 +17,7 @@ export const appendices: AppendixDocument[] = [
     title: "Competency-Based CV",
     description:
       "Updated professional CV containing my education, practicum experience, technical skills, academic projects, certifications, and contact details.",
-    file: publicPath("documents/Vincent_Trayvilla_Updated_CV.pdf"),
+    file: cvPath,
     viewLabel: "View CV",
     downloadLabel: "Download CV",
   },
